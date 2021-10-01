@@ -2,44 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonKnight : Unit
+public class BasicMonster : Monster
 {
-    //처음 지급 기사
     void Start()
     {
         maxHp = 10;
         hp = 10;
-        damage = 4;
+        damage = 5;
         attackSpeed = 2f;
         maxSpeed = 2;
         speed = maxSpeed;
+        kind = monsterKinds.Basic;
+        
     }
 
-    
     void Update()
     {
         move();
     }
-
     public override void Attack()
     {
-        monster.Hp = damage;
+        unit.Hp = damage;
     }
-    private void OnTriggerEnter2D(Collider2D enemy)
+
+    private void OnTriggerEnter2D(Collider2D Unit)
     {
-        if (enemy.tag == "Monster")
+        if (Unit.tag == "Unit")
         {
             speed = 0;
-            this.monster = (Monster)enemy.GetComponent(typeof(Monster));
+
+            this.unit = (Unit) Unit.GetComponent(typeof(Unit));
 
             StartCoroutine(attackCoolTime());
         }
 
     }
 
-    private void OnTriggerExit2D(Collider2D enemy)
+    private void OnTriggerExit2D(Collider2D Unit)
     {
-        if (enemy.tag == "Monster")
+        if (Unit.tag == "Unit")
         {
             speed = maxSpeed;
         }

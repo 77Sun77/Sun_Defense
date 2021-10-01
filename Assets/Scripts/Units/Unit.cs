@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Unit : Character
 {
+    
     protected Monster monster;
     protected IEnumerator attackCoolTime()
     {
@@ -11,7 +12,7 @@ public class Unit : Character
         {
             yield return new WaitForSeconds(attackSpeed);
             Attack();
-            if (monster.hp <= 0) break;
+            if (monster.Hp <= 0) break;
         }
         
     }
@@ -20,8 +21,5 @@ public class Unit : Character
         transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
-    protected void Attack()
-    {
-        monster.hp -= damage;
-    }
+    
 }

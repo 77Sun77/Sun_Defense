@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class Monster : Character
 {
-    // Start is called before the first frame update
-    void Start()
+    public Unit unit;
+    public monsterKinds kind;
+
+    protected IEnumerator attackCoolTime()
     {
-        hp = 10;
+        while (true)
+        {
+            yield return new WaitForSeconds(attackSpeed);
+            Attack();
+            if (unit.Hp <= 0) break;
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    protected void move()
     {
-        if(hp < 0)
-        {
-            Destroy(gameObject);
-        }
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
 }

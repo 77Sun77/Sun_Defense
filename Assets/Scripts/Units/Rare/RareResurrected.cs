@@ -2,23 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonKnight : Unit
+public class RareResurrected : Unit
 {
-    //처음 지급 기사
+    //레어 등급 부활자
+
+    int deathCount;
     void Start()
     {
+        deathCount = 0;
         maxHp = 10;
         hp = 10;
-        damage = 4;
+        damage = 3;
         attackSpeed = 2f;
         maxSpeed = 2;
         speed = maxSpeed;
     }
 
-    
-    void Update()
+    private void Update()
     {
         move();
+    }
+
+    public override void Death()
+    {
+        if(deathCount == 0)
+        {
+            hp = 10;
+            damage = 5;
+            deathCount++;
+        }
+        else base.Death();
     }
 
     public override void Attack()
