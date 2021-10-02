@@ -35,7 +35,6 @@ public class CommonKnight : Unit
         {
             enemys.Add(enemy);
             this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
-
             StartCoroutine(attackCoolTime());
         }
 
@@ -46,6 +45,15 @@ public class CommonKnight : Unit
         {
             speed = 0;
             anim.SetBool("isWalk", false);
+            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
+        }
+
+        foreach (Collider2D monsters in enemys)
+        {
+            if (monsters == null)
+            {
+                enemys.Remove(monsters);
+            }
         }
     }
 

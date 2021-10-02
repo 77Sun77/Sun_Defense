@@ -6,8 +6,6 @@ public class Character : MonoBehaviour
 {
     protected List<Collider2D> enemys = new List<Collider2D>();
     public Collider2D myCollider;
-    protected enum State { live, death };
-    State state = State.live;
     protected int maxHp;
     public int hp;
     protected int damage;

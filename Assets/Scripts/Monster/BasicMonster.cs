@@ -34,8 +34,7 @@ public class BasicMonster : Monster
         if (Unit.tag == "Unit")
         {
             enemys.Add(Unit);
-            this.unit = (Unit) enemys[0].GetComponent(typeof(Unit));
-
+            this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
             StartCoroutine(attackCoolTime());
         }
 
@@ -46,6 +45,15 @@ public class BasicMonster : Monster
         {
             speed = 0;
             anim.SetBool("isWalk", false);
+            this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
+        } 
+
+        foreach(Collider2D units in enemys)
+        {
+            if(units == null)
+            {
+                enemys.Remove(units);
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D Unit)

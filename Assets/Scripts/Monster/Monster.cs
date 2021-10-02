@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Monster : Character
 {
-    public Unit unit;
+    protected Unit unit;
 
     protected IEnumerator attackCoolTime()
     {
@@ -13,19 +13,18 @@ public class Monster : Character
             isAttact = true;
             while (true)
             {
-                
+                anim.SetTrigger("isAttack");
+                yield return new WaitForSeconds(skillSpeed);
+                Attack();
                 if (unit.Hp <= 0)
                 {
                     enemys.Remove(unit.myCollider);
-                    if(enemys.Count == 0)
+                    if (enemys.Count == 0)
                     {
                         isAttact = false;
                         break;
                     }
                 }
-                anim.SetTrigger("isAttack");
-                yield return new WaitForSeconds(skillSpeed);
-                Attack();
                 yield return new WaitForSeconds(attackSpeed);
             }
         }
