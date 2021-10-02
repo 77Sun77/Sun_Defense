@@ -5,17 +5,30 @@ using UnityEngine;
 public class Monster : Character
 {
     public Unit unit;
-    public monsterKinds kind;
 
     protected IEnumerator attackCoolTime()
     {
-        while (true)
+        if (!isAttact)
         {
-            yield return new WaitForSeconds(attackSpeed);
-            Attack();
-            if (unit.Hp <= 0) break;
+            isAttact = true;
+            while (true)
+            {
+                
+                if (unit.Hp <= 0)
+                {
+                    enemys.Remove(unit.myCollider);
+                    if(enemys.Count == 0)
+                    {
+                        isAttact = false;
+                        break;
+                    }
+                }
+                anim.SetTrigger("isAttack");
+                yield return new WaitForSeconds(skillSpeed);
+                Attack();
+                yield return new WaitForSeconds(attackSpeed);
+            }
         }
-
     }
 
     protected void move()

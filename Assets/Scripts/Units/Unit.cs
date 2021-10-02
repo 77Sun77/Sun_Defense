@@ -11,12 +11,19 @@ public class Unit : Character
     {
         while (true)
         {
+            if (monster.Hp <= 0)
+            {
+                enemys.Remove(monster.myCollider);
+                if (enemys.Count == 0)
+                {
+                    isAttact = false;
+                    break;
+                }
+            }
             anim.SetTrigger("isAttack");
             yield return new WaitForSeconds(skillSpeed);
             Attack();
-            if (monster.Hp <= 0) break;
             yield return new WaitForSeconds(attackSpeed);
-
         }
 
     }

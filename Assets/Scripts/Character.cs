@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    protected List<Collider2D> enemys = new List<Collider2D>();
+    public Collider2D myCollider;
     protected enum State { live, death };
     State state = State.live;
     protected int maxHp;
@@ -16,7 +18,10 @@ public class Character : MonoBehaviour
     protected Animator anim;
     protected SpriteRenderer mySprite;
 
-    public enum monsterKinds { Basic };
+    [SerializeField]
+    protected Effect effect;
+
+    protected bool isAttact;
     public virtual void Attack()
     {
 
@@ -33,6 +38,14 @@ public class Character : MonoBehaviour
             if (hp <= 0) Death();
         }
     }
+
+    protected void SetComponent()
+    {
+        anim = GetComponent<Animator>();
+        mySprite = GetComponent<SpriteRenderer>();
+        myCollider = GetComponent<Collider2D>();
+    }
+
     public virtual void Death()
     {
         Destroy(gameObject);
@@ -41,6 +54,12 @@ public class Character : MonoBehaviour
     public IEnumerator Hit()
     {
         mySprite.color = new Color(255 / 255f, 100 / 255f, 100 / 255f);
+        StartCoroutine(ResetColor());
+        yield return null;
+    }
+
+    IEnumerator ResetColor()
+    {
         yield return new WaitForSeconds(0.1f);
         mySprite.color = new Color(255 / 255f, 255 / 255f, 255 / 255f);
     }

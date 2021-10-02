@@ -16,6 +16,7 @@ public class RareResurrected : Unit
         attackSpeed = 2f;
         maxSpeed = 2;
         speed = maxSpeed;
+        SetComponent();
     }
 
     private void Update()
@@ -42,14 +43,21 @@ public class RareResurrected : Unit
     {
         if (enemy.tag == "Monster")
         {
-            speed = 0;
-            this.monster = (Monster)enemy.GetComponent(typeof(Monster));
+            enemys.Add(enemy);
+            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
 
             StartCoroutine(attackCoolTime());
         }
 
     }
-
+    private void OnTriggerStay2D(Collider2D enemy)
+    {
+        if (enemy.tag == "Monster")
+        {
+            speed = 0;
+            anim.SetBool("isWalk", false);
+        }
+    }
     private void OnTriggerExit2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")

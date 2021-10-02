@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CommonKnight : Unit
 {
-    [SerializeField]
-    Effect effect;
     //처음 지급 기사
     void Start()
     {
@@ -16,7 +14,7 @@ public class CommonKnight : Unit
         skillSpeed = 0.9f;
         maxSpeed = 1.5f;
         speed = maxSpeed;
-        anim = GetComponent<Animator>();
+        SetComponent();
     }
 
     
@@ -35,16 +33,22 @@ public class CommonKnight : Unit
     {
         if (enemy.tag == "Monster")
         {
-            speed = 0;
-            anim.SetBool("isWalk", false);
-            this.monster = (Monster)enemy.GetComponent(typeof(Monster));
+            enemys.Add(enemy);
+            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
 
             StartCoroutine(attackCoolTime());
         }
 
     }
+    private void OnTriggerStay2D(Collider2D enemy)
+    {
+        if (enemy.tag == "Monster")
+        {
+            speed = 0;
+            anim.SetBool("isWalk", false);
+        }
+    }
 
-    
 
     private void OnTriggerExit2D(Collider2D enemy)
     {
