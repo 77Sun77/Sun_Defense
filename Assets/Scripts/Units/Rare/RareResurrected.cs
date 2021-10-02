@@ -37,6 +37,7 @@ public class RareResurrected : Unit
 
     public override void Attack()
     {
+        StartCoroutine(monster.Hit());
         monster.Hp = damage;
     }
     private void OnTriggerEnter2D(Collider2D enemy)
@@ -65,6 +66,7 @@ public class RareResurrected : Unit
                 enemys.Remove(monsters);
             }
         }
+        
     }
     private void OnTriggerExit2D(Collider2D enemy)
     {
