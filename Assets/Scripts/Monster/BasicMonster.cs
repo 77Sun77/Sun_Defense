@@ -13,7 +13,7 @@ public class BasicMonster : Monster
         maxSpeed = 2;
         speed = maxSpeed;
         kind = monsterKinds.Basic;
-        
+        mySprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()

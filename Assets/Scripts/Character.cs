@@ -12,7 +12,9 @@ public class Character : MonoBehaviour
     protected float maxSpeed;
     protected float speed;
     protected float attackSpeed;
+    protected float skillSpeed;
     protected Animator anim;
+    protected SpriteRenderer mySprite;
 
     public enum monsterKinds { Basic };
     public virtual void Attack()
@@ -36,5 +38,10 @@ public class Character : MonoBehaviour
         Destroy(gameObject);
     }
     
-
+    public IEnumerator Hit()
+    {
+        mySprite.color = new Color(255 / 255f, 100 / 255f, 100 / 255f);
+        yield return new WaitForSeconds(0.1f);
+        mySprite.color = new Color(255 / 255f, 255 / 255f, 255 / 255f);
+    }
 }

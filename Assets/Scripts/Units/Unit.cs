@@ -6,15 +6,19 @@ public class Unit : Character
 {
     
     protected Monster monster;
+
     protected IEnumerator attackCoolTime()
     {
         while (true)
         {
-            yield return new WaitForSeconds(attackSpeed);
+            anim.SetTrigger("isAttack");
+            yield return new WaitForSeconds(skillSpeed);
             Attack();
             if (monster.Hp <= 0) break;
+            yield return new WaitForSeconds(attackSpeed);
+
         }
-        
+
     }
     protected void move()
     {
