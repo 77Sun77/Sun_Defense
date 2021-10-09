@@ -2,40 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonBeggarBoy : Unit
+public class CommonSheldMan : Unit
 {
-    // 일반 등급 가난한 소년
+    //일반 등급 돌격병
+
+    int deathCount;
     void Start()
     {
-        maxHp = 6;
-        hp = 6;
-        damage = 2;
-        attackSpeed = 0.3f;
-        skillSpeed = 0.3f;
-        maxSpeed = 3f;
+        maxHp = 15;
+        hp = 15;
+        maxSpeed = 0.8f;
         speed = maxSpeed;
         SetComponent();
     }
 
-
-    void Update()
+    private void Update()
     {
         move();
     }
 
-    public override void Attack()
-    {
-        StartCoroutine(monster.Hit());
-        monster.Hp = damage;
-        effect.UseEffect(0.2f);
-    }
     private void OnTriggerEnter2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")
         {
             enemys.Add(enemy);
-            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
-            StartCoroutine(attackCoolTime());
         }
 
     }
@@ -44,9 +34,7 @@ public class CommonBeggarBoy : Unit
         if (enemy.tag == "Monster")
         {
             speed = 0;
-            anim.SetBool("isWalk", false);
-            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
-        }
+            anim.SetBool("isWalk", false);        }
 
         foreach (Collider2D monsters in enemys)
         {
@@ -55,9 +43,8 @@ public class CommonBeggarBoy : Unit
                 enemys.Remove(monsters);
             }
         }
+
     }
-
-
     private void OnTriggerExit2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")

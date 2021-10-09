@@ -30,7 +30,6 @@ public class BasicMonster : Monster
 
     private void OnTriggerEnter2D(Collider2D Unit)
     {
-        
         if (Unit.tag == "Unit")
         {
             enemys.Add(Unit);
