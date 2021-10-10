@@ -2,39 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RareResurrected : Unit
+public class CommonHataeho : Unit
 {
-    //레어 등급 부활자
-
-    int deathCount;
+    // 일반 등급 하태호
     void Start()
     {
-        deathCount = 0;
-        maxHp = 10;
-        hp = 10;
-        damage = 3;
-        attackSpeed = 2f;
-        skillSpeed = 0.7f;
-        maxSpeed = 2;
+        maxHp = 12;
+        hp = 12;
+        damage = 5;
+        attackSpeed = 1.5f;
+        skillSpeed = 1.3f;
+        maxSpeed = 2f;
         speed = maxSpeed;
         SetComponent();
     }
 
-    private void Update()
+
+    void Update()
     {
         move();
-    }
-
-    public override void Death()
-    {
-        if(deathCount == 0)
-        {
-            hp = 10;
-            damage = 5;
-            deathCount++;
-            anim.SetBool("isRevival", true);
-        }
-        else base.Death();
     }
 
     public override void Attack()
@@ -42,7 +28,6 @@ public class RareResurrected : Unit
         StartCoroutine(monster.Hit());
         monster.Hp = damage;
     }
-
     protected IEnumerator newAttackCoolTime()
     {
         while (true)
@@ -64,7 +49,6 @@ public class RareResurrected : Unit
         }
 
     }
-
     private void OnTriggerEnter2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")
@@ -91,7 +75,7 @@ public class RareResurrected : Unit
                 enemys.Remove(enemys[index]);
             }
         }
-
+        
     }
     private void OnTriggerExit2D(Collider2D enemy)
     {

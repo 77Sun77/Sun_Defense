@@ -48,11 +48,11 @@ public class CommonBeggarBoy : Unit
             this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
         }
 
-        foreach (Collider2D monsters in enemys)
+        for (int index = 0; index < enemys.Count; index++)
         {
-            if (monsters == null)
+            if (enemys[index] == null)
             {
-                enemys.Remove(monsters);
+                enemys.Remove(enemys[index]);
             }
         }
     }

@@ -34,16 +34,16 @@ public class CommonSheldMan : Unit
         if (enemy.tag == "Monster")
         {
             speed = 0;
-            anim.SetBool("isWalk", false);        }
-
-        foreach (Collider2D monsters in enemys)
-        {
-            if (monsters == null)
-            {
-                enemys.Remove(monsters);
-            }
+            anim.SetBool("isWalk", false);        
         }
 
+        for (int index = 0; index < enemys.Count; index++)
+        {
+            if (enemys[index] == null)
+            {
+                enemys.Remove(enemys[index]);
+            }
+        }
     }
     private void OnTriggerExit2D(Collider2D enemy)
     {
