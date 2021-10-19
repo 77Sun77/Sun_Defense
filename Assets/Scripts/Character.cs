@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public enum state { None, Freeze };
+    public state myState;
+
     protected List<Collider2D> enemys = new List<Collider2D>();
     public Collider2D myCollider;
     protected int maxHp;
     public int hp;
     protected int damage;
-    protected float maxSpeed;
-    protected float speed;
+    public float maxSpeed;
+    public float speed;
     protected float attackSpeed;
     protected float skillSpeed;
     protected Animator anim;

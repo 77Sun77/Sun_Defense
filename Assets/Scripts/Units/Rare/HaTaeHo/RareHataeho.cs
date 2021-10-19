@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonHataeho : Unit
+public class RareHataeho : Unit
 {
-    // 일반 등급 하태호
+    // 레어 등급 하태호
     void Start()
     {
         maxHp = 12;

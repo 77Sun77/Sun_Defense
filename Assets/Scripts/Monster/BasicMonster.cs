@@ -47,11 +47,11 @@ public class BasicMonster : Monster
             this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
         } 
 
-        foreach(Collider2D units in enemys)
+        for (int index = 0; index < enemys.Count; index++)
         {
-            if(units == null)
+            if (enemys[index] == null)
             {
-                enemys.Remove(units);
+                enemys.Remove(enemys[index]);
             }
         }
     }
