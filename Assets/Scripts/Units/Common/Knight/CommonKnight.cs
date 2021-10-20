@@ -25,7 +25,7 @@ public class CommonKnight : Unit
 
     public override void Attack()
     {
-        StartCoroutine(monster.Hit());
+        monster.Hit(); 
         monster.Hp = damage;
         effect.UseEffect(0.5f);
     }

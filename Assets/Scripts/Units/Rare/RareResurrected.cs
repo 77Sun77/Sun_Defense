@@ -39,7 +39,7 @@ public class RareResurrected : Unit
 
     public override void Attack()
     {
-        StartCoroutine(monster.Hit());
+        monster.Hit();
         monster.Hp = damage;
     }
 

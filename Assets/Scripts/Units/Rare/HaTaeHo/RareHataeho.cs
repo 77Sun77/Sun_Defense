@@ -25,7 +25,7 @@ public class RareHataeho : Unit
 
     public override void Attack()
     {
-        StartCoroutine(monster.Hit());
+        monster.Hit();
         monster.Hp = damage;
     }
     protected IEnumerator newAttackCoolTime()

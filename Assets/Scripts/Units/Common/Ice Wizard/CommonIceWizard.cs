@@ -30,6 +30,7 @@ public class CommonIceWizard : Unit
         {
             this.monster = monster.GetComponent<Monster>();
             this.monster.Hp = damage;
+            this.monster.Hit();
             if (this.monster.myState != state.Freeze)
             {
                 this.monster.myState = state.Freeze;
@@ -42,9 +43,27 @@ public class CommonIceWizard : Unit
     }
     public override void Attack()
     {
-        StartCoroutine(monster.Hit());
         Slow();
         effect.UseEffect(0.9f);
+    }
+
+    IEnumerator NewAttackCoolTime()
+    {
+        while (true)
+        {
+            if (enemys == null)
+            {
+                if (enemys.Count == 0)
+                {
+                    isAttact = false;
+                    break;
+                }
+            }
+            anim.SetTrigger("isAttack");
+            yield return new WaitForSeconds(skillSpeed);
+            Attack();
+            yield return new WaitForSeconds(attackSpeed);
+        }
     }
     private void OnTriggerEnter2D(Collider2D enemy)
     {
@@ -52,7 +71,7 @@ public class CommonIceWizard : Unit
         {
             enemys.Add(enemy);
             this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
-            StartCoroutine(attackCoolTime());
+            StartCoroutine(NewAttackCoolTime());
         }
 
     }

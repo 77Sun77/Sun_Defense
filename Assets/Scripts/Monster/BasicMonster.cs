@@ -23,7 +23,7 @@ public class BasicMonster : Monster
     }
     public override void Attack()
     {
-        StartCoroutine(unit.Hit());
+        unit.Hit();
         unit.Hp = damage;
         effect.UseEffect(0.5f);
     }

@@ -52,16 +52,33 @@ public class Character : MonoBehaviour
         Destroy(gameObject);
     }
     
-    public IEnumerator Hit()
+    public void Hit()
     {
         mySprite.color = new Color(255 / 255f, 100 / 255f, 100 / 255f);
-        StartCoroutine(ResetColor());
-        yield return null;
+        //StartCoroutine(ResetColor());
+        timer();
     }
 
     IEnumerator ResetColor()
     {
         yield return new WaitForSeconds(0.1f);
         mySprite.color = new Color(255 / 255f, 255 / 255f, 255 / 255f);
+        
+    }
+
+    void timer()
+    {
+        float setTime = 0.1f;
+        while (true)
+        {
+            print(setTime);
+            if (setTime <= 0)
+            {
+                mySprite.color = new Color(255 / 255f, 255 / 255f, 255 / 255f);
+                break;
+            }
+            setTime -= Time.time;
+        }
+        
     }
 }

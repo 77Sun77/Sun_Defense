@@ -14,7 +14,7 @@ public class Arrow : MonoBehaviour
 
     public void Attack()
     {
-        StartCoroutine(monster.Hit());
+        monster.Hit();
         monster.Hp = damage;
         Destroy(gameObject);
     }
