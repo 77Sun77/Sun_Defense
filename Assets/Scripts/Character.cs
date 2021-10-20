@@ -55,30 +55,22 @@ public class Character : MonoBehaviour
     public void Hit()
     {
         mySprite.color = new Color(255 / 255f, 100 / 255f, 100 / 255f);
-        //StartCoroutine(ResetColor());
-        timer();
+        StartCoroutine(ResetColor());
+        
     }
 
     IEnumerator ResetColor()
     {
-        yield return new WaitForSeconds(0.1f);
-        mySprite.color = new Color(255 / 255f, 255 / 255f, 255 / 255f);
-        
-    }
-
-    void timer()
-    {
-        float setTime = 0.1f;
+        float time = 0;
         while (true)
         {
-            print(setTime);
-            if (setTime <= 0)
+            yield return new WaitForFixedUpdate();
+            time += Time.deltaTime;
+            if (time >= 0.1)
             {
                 mySprite.color = new Color(255 / 255f, 255 / 255f, 255 / 255f);
                 break;
             }
-            setTime -= Time.time;
         }
-        
     }
 }

@@ -49,20 +49,24 @@ public class CommonIceWizard : Unit
 
     IEnumerator NewAttackCoolTime()
     {
-        while (true)
+        if (!isAttact)
         {
-            if (enemys == null)
+            isAttact = true;
+            while (true)
             {
-                if (enemys.Count == 0)
+                if (enemys == null)
                 {
-                    isAttact = false;
-                    break;
+                    if (enemys.Count == 0)
+                    {
+                        isAttact = false;
+                        break;
+                    }
                 }
+                anim.SetTrigger("isAttack");
+                yield return new WaitForSeconds(skillSpeed);
+                Attack();
+                yield return new WaitForSeconds(attackSpeed);
             }
-            anim.SetTrigger("isAttack");
-            yield return new WaitForSeconds(skillSpeed);
-            Attack();
-            yield return new WaitForSeconds(attackSpeed);
         }
     }
     private void OnTriggerEnter2D(Collider2D enemy)
