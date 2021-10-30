@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 385732399}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 848677770659974484, guid: 5077967a0e35b3b4698c6d067633e8cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.26
+      value: -0.84
       objectReference: {fileID: 0}
     - target: {fileID: 848677770659974484, guid: 5077967a0e35b3b4698c6d067633e8cf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -568,6 +568,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5077967a0e35b3b4698c6d067633e8cf, type: 3}
+--- !u!1001 &1174023503945834740
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255170, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255174, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_Name
+      value: Common Bleeder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174023505483255174, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66af16e6974a0f342a2845e8180da602, type: 3}
 --- !u!1001 &2307057502157397109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -762,6 +823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Common IceWizard
       objectReference: {fileID: 0}
+    - target: {fileID: 3638301894369799815, guid: 346549c1deefa2c4b9f514828e7da580, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3638301894369799819, guid: 346549c1deefa2c4b9f514828e7da580, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -879,10 +944,6 @@ PrefabInstance:
     - target: {fileID: 6941800402648737193, guid: 9245daa1534e19544943f8562769ed66, type: 3}
       propertyPath: m_Name
       value: Rare DeathMan
-      objectReference: {fileID: 0}
-    - target: {fileID: 6941800402648737193, guid: 9245daa1534e19544943f8562769ed66, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6941800402648737198, guid: 9245daa1534e19544943f8562769ed66, type: 3}
       propertyPath: m_RootOrder

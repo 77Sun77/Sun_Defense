@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    Monster monster;
+    List<Monster> monster = new List<Monster>();
     int damage=3;
-    
+
     void Update()
     {
         transform.Translate(Vector2.right * 2.5f * Time.deltaTime);
@@ -14,8 +14,8 @@ public class Arrow : MonoBehaviour
 
     public void Attack()
     {
-        monster.Hit();
-        monster.Hp = damage;
+        monster[0].Hit();
+        monster[0].Hp = damage;
         Destroy(gameObject);
     }
 
@@ -23,7 +23,7 @@ public class Arrow : MonoBehaviour
     {
         if(enemy.tag == "Monster")
         {
-            monster = this.monster = (Monster)enemy.GetComponent(typeof(Monster));
+            monster.Add((Monster)enemy.GetComponent(typeof(Monster))); 
             Attack();
         }
     }

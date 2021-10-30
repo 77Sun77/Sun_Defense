@@ -8,23 +8,26 @@ public class Monster : Character
 
     protected IEnumerator attackCoolTime()
     {
-        while (true)
+        if (!isAttact)
         {
-            if (unit.Hp <= 0)
+            isAttact = true;
+            while (true)
             {
-                enemys.Remove(unit.myCollider);
-                if (enemys.Count == 0)
+                if (unit.Hp <= 0)
                 {
-                    isAttact = false;
-                    break;
+                    enemys.Remove(unit.myCollider);
+                    if (enemys.Count == 0)
+                    {
+                        isAttact = false;
+                        break;
+                    }
                 }
+                anim.SetTrigger("isAttack");
+                yield return new WaitForSeconds(skillSpeed);
+                Attack();
+                yield return new WaitForSeconds(attackSpeed);
             }
-            anim.SetTrigger("isAttack");
-            yield return new WaitForSeconds(skillSpeed);
-            Attack();
-            yield return new WaitForSeconds(attackSpeed);
         }
-        
     }
 
     protected void move()

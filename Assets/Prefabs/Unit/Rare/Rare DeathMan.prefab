@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6941800402098314877}
   m_Layer: 0
   m_Name: Range
-  m_TagString: Untagged
+  m_TagString: Range
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6941800402648737198
 Transform:
   m_ObjectHideFlags: 0
@@ -204,8 +204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca628f4b24f4f342beddc8d3131b8b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myState: 0
   myCollider: {fileID: 0}
   hp: 0
+  maxSpeed: 0
+  speed: 0
   effect: {fileID: 6941800402947415197}
 --- !u!95 &6941800402648736851
 Animator:
