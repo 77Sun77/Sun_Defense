@@ -45,24 +45,27 @@ public class RareResurrected : Unit
 
     protected IEnumerator newAttackCoolTime()
     {
-        while (true)
+        if (!isAttact)
         {
-            if (monster.Hp <= 0)
+            isAttact = true;
+            while (true)
             {
-                enemys.Remove(monster.myCollider);
-                if (enemys.Count == 0)
+                if (monster.Hp <= 0)
                 {
-                    isAttact = false;
-                    break;
+                    enemys.Remove(monster.myCollider);
+                    if (enemys.Count == 0)
+                    {
+                        isAttact = false;
+                        break;
+                    }
                 }
+                anim.SetTrigger("isAttack");
+                effect.UseEffect(1.3f);
+                yield return new WaitForSeconds(skillSpeed);
+                Attack();
+                yield return new WaitForSeconds(attackSpeed);
             }
-            anim.SetTrigger("isAttack");
-            effect.UseEffect(1.3f);
-            yield return new WaitForSeconds(skillSpeed);
-            Attack();
-            yield return new WaitForSeconds(attackSpeed);
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D enemy)
