@@ -34,4 +34,10 @@ public class Monster : Character
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
+
+    public override void Death()
+    {
+        base.Death();
+        GameManager.count -= 1;
+    }
 }
