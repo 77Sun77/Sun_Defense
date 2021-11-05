@@ -6,7 +6,7 @@ public class UnitPull : MonoBehaviour
 {
     public int price;
     List<string> commonList = new List<string>();
-
+    List<string> holdCommon = new List<string>();
     private void SetCommon()
     {
         commonList.Add("거지");
@@ -24,6 +24,7 @@ public class UnitPull : MonoBehaviour
 
         int randomNumber = Random.Range(0, commonList.Count);
         print(commonList[randomNumber]+"등장");
+        SavaUnit(randomNumber);
         commonList.RemoveAt(randomNumber);
     }
 
@@ -41,9 +42,33 @@ public class UnitPull : MonoBehaviour
         SetCommon();
     }
 
-    // Update is called once per frame
+    void SavaUnit(int num)
+    {
+        PlayerPrefs.SetString(commonList[num], commonList[num]);
+    }
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            for(int i=0;i< commonList.Count; i++)
+            {
+                string unit = PlayerPrefs.GetString(commonList[i]);
+                if (unit != null)
+                {
+                    holdCommon.Add(unit);
+                    commonList.Remove(commonList[i]);
+                }
+                
+            }
+            for (int i = 0; i < commonList.Count; i++)
+            {
+                print(holdCommon[i]);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            PlayerPrefs.DeleteAll();
+
+        }
     }
 }
