@@ -6,7 +6,6 @@ public class UnitPull : MonoBehaviour
 {
     public int price;
     List<string> commonList = new List<string>();
-    List<string> holdCommon = new List<string>();
     private void SetCommon()
     {
         commonList.Add("거지");
@@ -17,6 +16,26 @@ public class UnitPull : MonoBehaviour
         commonList.Add("닌자");
         commonList.Add("슈퍼맨");
         commonList.Add("보류");
+    }
+
+    void CommonLoadingUnits()
+    {
+        Inventory.holdCommon.Add("기사");
+        Inventory.holdCommon.Add("궁수");
+        for (int i = 0; i < commonList.Count; i++)
+        {
+            string unit = PlayerPrefs.GetString(commonList[i]);
+            if (unit != "")
+            {
+                Inventory.holdCommon.Add(unit);
+                commonList.Remove(commonList[i]);
+            }
+
+        }
+        for (int i = 0; i < commonList.Count; i++)
+        {
+            print(Inventory.holdCommon[i]);
+        }
     }
     public void CommonPull()
     {
@@ -40,31 +59,20 @@ public class UnitPull : MonoBehaviour
     void Start()
     {
         SetCommon();
+        CommonLoadingUnits();
+
+
     }
 
     void SavaUnit(int num)
     {
         PlayerPrefs.SetString(commonList[num], commonList[num]);
     }
+
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            for(int i=0;i< commonList.Count; i++)
-            {
-                string unit = PlayerPrefs.GetString(commonList[i]);
-                if (unit != null)
-                {
-                    holdCommon.Add(unit);
-                    commonList.Remove(commonList[i]);
-                }
-                
-            }
-            for (int i = 0; i < commonList.Count; i++)
-            {
-                print(holdCommon[i]);
-            }
-        }
+        
         if (Input.GetKeyDown(KeyCode.D))
         {
             PlayerPrefs.DeleteAll();

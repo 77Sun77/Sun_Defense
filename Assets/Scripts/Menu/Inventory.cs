@@ -1,0 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Inventory : MonoBehaviour
+{
+    public static List<string> holdCommon = new List<string>();
+    public Transform inventoryPlace;
+
+    [Header("Common")]
+    public UnitMount[] common = new UnitMount[10];
+    
+    void SetCommon()
+    {
+        for(int i=0;i< inventoryPlace.childCount; i++)
+        {
+             
+            Destroy(inventoryPlace.GetChild(i).gameObject);
+        }
+        
+        for (int i = 0; i < 10; i++)
+        {
+            for(int j = 0; j < holdCommon.Count; j++)
+            {
+                
+                if (common[i].unitName == holdCommon[j])
+                {
+                    Instantiate(common[i].gameObject, inventoryPlace);
+                }
+            }
+        }
+    }
+    private void OnEnable()
+    {
+        SetCommon();
+    }
+
+    
+    void Update()
+    {
+        
+    }
+}
