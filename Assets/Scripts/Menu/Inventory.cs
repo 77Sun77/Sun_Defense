@@ -11,7 +11,13 @@ public class Inventory : MonoBehaviour
 
     [Header("Common")]
     public UnitMount[] common = new UnitMount[10];
-    
+
+    [Header("Rare")]
+    public UnitMount[] rare = new UnitMount[7];
+
+    [Header("Legendary")]
+    public UnitMount[] legendary = new UnitMount[5];
+
 
     void SetCommon()
     {

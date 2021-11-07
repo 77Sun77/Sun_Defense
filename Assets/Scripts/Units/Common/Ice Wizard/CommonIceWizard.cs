@@ -34,8 +34,8 @@ public class CommonIceWizard : Unit
             if (this.monster.myState != state.Freeze)
             {
                 this.monster.myState = state.Freeze;
-                if (this.monster.maxSpeed - 1.5f > 0.7f) this.monster.maxSpeed -= 1.5f;
-                else this.monster.maxSpeed = 0.7f;
+                if (this.monster.maxSpeed - 1.5f > 0.5f) this.monster.maxSpeed -= 1.5f;
+                else this.monster.maxSpeed = 0.5f;
                 if (this.monster.speed != 0) this.monster.speed = this.monster.maxSpeed;
             }
         }

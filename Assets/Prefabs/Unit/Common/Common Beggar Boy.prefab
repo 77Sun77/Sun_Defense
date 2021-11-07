@@ -133,7 +133,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -3494370064288771374, guid: 4e55273f7aa2fc24085661b3e5f2932e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -223,8 +223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b53e0968a29242547ae909048c9465de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myState: 0
   myCollider: {fileID: 0}
   hp: 0
+  maxSpeed: 0
+  speed: 0
   effect: {fileID: 2307057503410501262}
 --- !u!1 &2307057503410501263
 GameObject:

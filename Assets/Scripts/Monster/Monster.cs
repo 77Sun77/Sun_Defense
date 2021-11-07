@@ -5,7 +5,8 @@ using UnityEngine;
 public class Monster : Character
 {
     protected Unit unit;
-
+    protected Castle castle;
+    protected bool isCastleAttack;
     protected IEnumerator attackCoolTime()
     {
         if (!isAttact)
@@ -29,6 +30,31 @@ public class Monster : Character
             }
         }
     }
+
+    protected IEnumerator CastleAttackCoolTime()
+    {
+        if (!isAttact)
+        {
+            isAttact = true;
+            while (true)
+            {
+                if (castle.hp <= 0)
+                {
+                    // 게임 종료
+                }
+                anim.SetTrigger("isAttack");
+                yield return new WaitForSeconds(skillSpeed);
+                CastleAttack();
+                yield return new WaitForSeconds(attackSpeed);
+            }
+        }
+    }
+
+    public virtual void CastleAttack()
+    {
+
+    }
+    
 
     protected void move()
     {

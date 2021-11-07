@@ -11,10 +11,12 @@ public class BasicMonster : Monster
         damage = 5;
         attackSpeed = 2f;
         skillSpeed = 0.9f;
-        maxSpeed = 2;
+        maxSpeed = 0.7f;
         speed = maxSpeed;
 
         SetComponent();
+
+        isCastleAttack = false;
     }
 
     void Update()
@@ -28,13 +30,27 @@ public class BasicMonster : Monster
         effect.UseEffect(0.5f);
     }
 
+    public override void CastleAttack()
+    {
+        castle.Hit();
+        castle.hp -= damage;
+        effect.UseEffect(0.5f);
+    }
+
     private void OnTriggerEnter2D(Collider2D Unit)
     {
-        if (Unit.tag == "Unit")
+        if (Unit.tag == "Unit" && !isCastleAttack)
         {
             enemys.Add(Unit);
             this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
             StartCoroutine(attackCoolTime());
+        }
+
+        if(Unit.tag == "Castle" && enemys.Count == 0) 
+        {
+            isCastleAttack = true;
+            this.castle = Unit.GetComponent<Castle>();
+            StartCoroutine(CastleAttackCoolTime());
         }
 
     }
@@ -46,6 +62,11 @@ public class BasicMonster : Monster
             anim.SetBool("isWalk", false);
             this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
         } 
+        else if(Unit.tag == "Castle")
+        {
+            speed = 0;
+            anim.SetBool("isWalk", false);
+        }
 
         for (int index = 0; index < enemys.Count; index++)
         {

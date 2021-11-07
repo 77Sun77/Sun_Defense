@@ -132,7 +132,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 9e37e8ea77107ee47aa10b02ddd7f243, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -222,6 +222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e8a513b618bb49b81648d2f17f483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myState: 0
   myCollider: {fileID: 0}
   hp: 0
+  maxSpeed: 0
+  speed: 0
   effect: {fileID: 0}

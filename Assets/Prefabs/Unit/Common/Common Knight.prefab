@@ -242,7 +242,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e754a06d506461349985fc29ac73a652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myState: 0
+  myCollider: {fileID: 0}
   hp: 0
+  maxSpeed: 0
+  speed: 0
   effect: {fileID: 848677770394235717}
 --- !u!95 &848677770659974487
 Animator:

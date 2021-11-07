@@ -8,6 +8,7 @@ TagManager:
   - Unit
   - Range
   - Ground
+  - Castle
   layers:
   - Default
   - TransparentFX
