@@ -7,7 +7,7 @@ public class UnitManager : MonoBehaviour
 {
     public GameObject[] place = new GameObject[5];
     public static List<GameObject> unitButtons = new List<GameObject>();
-    List<string> units = new List<string>();
+    public static List<string> units = new List<string>();
     
     public GameObject reminder;
     GameObject ui;
@@ -29,7 +29,6 @@ public class UnitManager : MonoBehaviour
 
     public void UnitMounting(GameObject unit, string unitName)
     {
-        
         unitButtons.Add(unit);
         units.Add(unitName);
     }

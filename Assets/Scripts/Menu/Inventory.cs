@@ -6,10 +6,13 @@ public class Inventory : MonoBehaviour
 {
     public static List<string> holdCommon = new List<string>();
     public Transform inventoryPlace;
+    public GameObject mountingWindow;
+    public static GameObject mountingWin;
 
     [Header("Common")]
     public UnitMount[] common = new UnitMount[10];
     
+
     void SetCommon()
     {
         for(int i=0;i< inventoryPlace.childCount; i++)
@@ -33,6 +36,7 @@ public class Inventory : MonoBehaviour
     private void OnEnable()
     {
         SetCommon();
+        mountingWin = mountingWindow;
     }
 
     

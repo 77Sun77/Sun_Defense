@@ -6,6 +6,7 @@ public class UnitPull : MonoBehaviour
 {
     public int price;
     List<string> commonList = new List<string>();
+    List<string> temp = new List<string>();
     private void SetCommon()
     {
         commonList.Add("거지");
@@ -22,19 +23,19 @@ public class UnitPull : MonoBehaviour
     {
         Inventory.holdCommon.Add("기사");
         Inventory.holdCommon.Add("궁수");
-        for (int i = 0; i < commonList.Count; i++)
+        for (int i = 0; i < 8; i++)
         {
             string unit = PlayerPrefs.GetString(commonList[i]);
             if (unit != "")
             {
                 Inventory.holdCommon.Add(unit);
-                commonList.Remove(commonList[i]);
+                temp.Add(commonList[i]);
             }
 
         }
-        for (int i = 0; i < commonList.Count; i++)
+        for (int i = 0; i < temp.Count; i++)
         {
-            print(Inventory.holdCommon[i]);
+            commonList.Remove(temp[i]);
         }
     }
     public void CommonPull()
@@ -43,6 +44,7 @@ public class UnitPull : MonoBehaviour
 
         int randomNumber = Random.Range(0, commonList.Count);
         print(commonList[randomNumber]+"등장");
+        Inventory.holdCommon.Add(commonList[randomNumber]);
         SavaUnit(randomNumber);
         commonList.RemoveAt(randomNumber);
     }

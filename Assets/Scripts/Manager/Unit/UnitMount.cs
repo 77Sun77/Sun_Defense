@@ -5,17 +5,46 @@ using UnityEngine;
 public class UnitMount : MonoBehaviour
 {
     public GameObject unit;
+    public Sprite image;
     public string unitName;
+
+    GameObject ui;
     void Start()
     {
-        
+        ui = GameObject.Find("UI");
     }
 
     public void Mounting()
     {
         UnitManager unit = new UnitManager();
+        UnitMounted unitMount = new UnitMounted();
+        for (int i=0;i< UnitManager.units.Count; i++)
+        {
+            if(UnitManager.units[i] == unitName)
+            {
+                Instantiate(UnitMounted.inUse, ui.transform);
+                return;
+            }
+        }
+        
         unit.UnitMounting(this.unit, unitName);
+        unitMount.Mounting(gameObject);
     }
+
+    [Header("Stats")]
+    public string rating;
+    public int hp;
+    public int damage;
+    public int cost;
+
+    public void OpenWindow()
+    {
+        UnitMount unitMount = GetComponent<UnitMount>();
+        GameObject window = Instantiate(Inventory.mountingWin, ui.transform);
+        MountingWindow mountingWindow =  window.GetComponent<MountingWindow>();
+        mountingWindow.SetContect(rating, hp, damage, cost, unitMount);
+    }
+
     void Update()
     {
         

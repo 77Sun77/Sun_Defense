@@ -7,7 +7,7 @@ public class UnitButton : MonoBehaviour
 {
     public GameObject unit;
     public int cost;
-    public UnitManager unitManager;
+    UnitManager unitManager=new UnitManager();
     public void spawnUnit()
     {
         if(GameManager.material >= cost)
