@@ -28,7 +28,7 @@ public class UnitMounted : MonoBehaviour
         isMounting = true;
     }
 
-    void SetMounting()
+    public void SetMounting()
     {
         if (isMounting)
         {
