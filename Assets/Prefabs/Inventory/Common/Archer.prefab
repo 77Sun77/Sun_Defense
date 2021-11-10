@@ -152,3 +152,4 @@ MonoBehaviour:
   hp: 10
   damage: 3
   cost: 300
+  specialAbility: "\uC6D0\uAC70\uB9AC \uACF5\uACA9\uC744 \uC0AC\uC6A9\uD569\uB2C8\uB2E4."

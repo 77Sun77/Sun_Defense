@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MountingWindow : MonoBehaviour
 {
+    [Header("유닛 정보")]
     public Text ratingText;
     public Text nameText;
     public Text statsText;
@@ -22,9 +23,10 @@ public class MountingWindow : MonoBehaviour
     public GameObject setButton;
     public GameObject disableButton;
 
-
+    [Header("특수 능력")]
     int disableNumber;
-    public void SetContect(string rating, int hp, int damage, int cost, UnitMount unit)
+    public Text specialAbility;
+    public void SetContect(string rating, int hp, int damage, int cost, UnitMount unit, string specialAbility)
     {
         this.rating = rating;
         this.unitName = unit.unitName; 
@@ -37,7 +39,7 @@ public class MountingWindow : MonoBehaviour
         nameText.text = unit.unitName;
         statsText.text = "HP :" + hp + "\n" + "Dmg : " + damage + "\n" + "Cost : " + cost;
         unitImage.sprite = unit.image;
-
+        this.specialAbility.text = specialAbility;
 
 
 

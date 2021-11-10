@@ -36,13 +36,14 @@ public class UnitMount : MonoBehaviour
     public int hp;
     public int damage;
     public int cost;
+    public string specialAbility;
 
     public void OpenWindow()
     {
         UnitMount unitMount = GetComponent<UnitMount>();
         GameObject window = Instantiate(Inventory.mountingWin, ui.transform);
         MountingWindow mountingWindow = window.GetComponent<MountingWindow>();
-        mountingWindow.SetContect(rating, hp, damage, cost, unitMount);
+        mountingWindow.SetContect(rating, hp, damage, cost, unitMount, specialAbility);
     }
 
     void Update()
