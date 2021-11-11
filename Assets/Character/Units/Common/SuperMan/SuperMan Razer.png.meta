@@ -1,16 +1,31 @@
 fileFormatVersion: 2
-guid: cd5d9ac5329a6184181d83a3da45840d
+guid: 3d9eadf05baa7264e9a23004184b3634
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7423694833857678978
-    second: SuperMan Attack_0
+      213: 8996305210445452068
+    second: SuperMan Razer_0
   - first:
-      213: 550598216135805391
-    second: SuperMan Attack_1
+      213: 7077852039198674597
+    second: SuperMan Razer_1
   - first:
-      213: -8447076359769503110
-    second: SuperMan Attack_2
+      213: -8208747028152753715
+    second: SuperMan Razer_2
+  - first:
+      213: 7847097882990014179
+    second: SuperMan Razer_3
+  - first:
+      213: 6955530118856547296
+    second: SuperMan Razer_4
+  - first:
+      213: -8597511800354194904
+    second: SuperMan Razer_5
+  - first:
+      213: 2360161399546048505
+    second: SuperMan Razer_6
+  - first:
+      213: -1589652825829392240
+    second: SuperMan Razer_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -42,8 +57,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
-    mipBias: 0
+    aniso: -1
+    mipBias: -100
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -124,13 +139,97 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SuperMan Attack_0
+      name: SuperMan Razer_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423d897aceb49dc70800000000000000
+      internalID: 8996305210445452068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperMan Razer_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae0639fde4993260800000000000000
+      internalID: 7077852039198674597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperMan Razer_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc169e7d11ca41e80800000000000000
+      internalID: -8208747028152753715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperMan Razer_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eee659e2fd76ec60800000000000000
+      internalID: 7847097882990014179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperMan Razer_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e71b20b81ecb9f890800000000000000
-      internalID: -7423694833857678978
+      spriteID: 0eb99f68ac1078060800000000000000
+      internalID: 6955530118856547296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SuperMan Attack_1
+      name: SuperMan Razer_5
       rect:
         serializedVersion: 2
-        x: 48
+        x: 64
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc90dbe092e14a700800000000000000
-      internalID: 550598216135805391
+      spriteID: 82ab8a3b1908fa880800000000000000
+      internalID: -8597511800354194904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SuperMan Attack_2
+      name: SuperMan Razer_6
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
         y: 0
-        width: 48
-        height: 48
+        width: 64
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,8 +279,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7ac6592ec4f5ca80800000000000000
-      internalID: -8447076359769503110
+      spriteID: 9ffe788c94af0c020800000000000000
+      internalID: 2360161399546048505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SuperMan Razer_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0904e306d2b60f9e0800000000000000
+      internalID: -1589652825829392240
       vertices: []
       indices: 
       edges: []
