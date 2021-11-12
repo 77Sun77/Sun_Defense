@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
 
     protected List<Collider2D> enemys = new List<Collider2D>();
     public Collider2D myCollider;
-    protected int maxHp;
+    public int maxHp;
     public int hp;
     protected int damage;
     public float maxSpeed;
