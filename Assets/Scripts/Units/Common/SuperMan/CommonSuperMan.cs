@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RareHataeho : Unit
+public class CommonSuperMan : Unit
 {
-    // 레어 등급 하태호
+    //일반 등급 슈퍼맨
     void Start()
     {
-        maxHp = 12;
-        hp = 12;
-        damage = 5;
+        maxHp = 10;
+        hp = 10;
+        damage = 2;
         attackSpeed = 1.5f;
-        skillSpeed = 1.3f;
-        maxSpeed = 2f;
+        skillSpeed = 0.6f;
+        maxSpeed = 1.5f;
         speed = maxSpeed;
         SetComponent();
+        StartCoroutine(DamageUp());
     }
 
 
@@ -45,13 +46,22 @@ public class RareHataeho : Unit
                     }
                 }
                 anim.SetTrigger("isAttack");
-                effect.UseEffect(1.3f);
+                effect.UseEffect(1f);
                 yield return new WaitForSeconds(skillSpeed);
                 Attack();
                 yield return new WaitForSeconds(attackSpeed);
             }
         }
     }
+    IEnumerator DamageUp()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+            damage++;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")
@@ -78,8 +88,9 @@ public class RareHataeho : Unit
                 enemys.Remove(enemys[index]);
             }
         }
-        
     }
+
+
     private void OnTriggerExit2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")
