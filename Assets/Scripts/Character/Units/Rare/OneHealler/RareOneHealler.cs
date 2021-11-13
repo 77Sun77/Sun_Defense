@@ -6,7 +6,9 @@ public class RareOneHealler : Unit
 {
     //레어 등급 힐러
     public GameObject healEffect;
+    GameObject[] unit;
     List<Unit> units = new List<Unit>();
+    int randomNumber;
     void Start()
     {
         maxHp = 15;
@@ -14,7 +16,7 @@ public class RareOneHealler : Unit
         damage = 0;
         attackSpeed = 5f;
         skillSpeed = 1f;
-        maxSpeed = 1;
+        maxSpeed = 0.5f;
         speed = maxSpeed;
         SetComponent();
         StartCoroutine(newHealCoolTime());
@@ -23,8 +25,7 @@ public class RareOneHealler : Unit
     private void Update()
     {
         move();
-
-        GameObject[] unit = GameObject.FindGameObjectsWithTag("Unit");
+        unit = GameObject.FindGameObjectsWithTag("Unit");
         SetUnits(unit);
 
 
@@ -32,17 +33,17 @@ public class RareOneHealler : Unit
 
     void SetUnits(GameObject[] unit)
     {
+        units.RemoveRange(0, units.Count);
         for(int i=0; i< unit.Length; i++)
         {
-            units[i] = (Unit) unit[0].GetComponent(typeof(Unit));
+            units.Add((Unit) unit[i].GetComponent(typeof(Unit)));
         }
     }
 
     void Healling(int healNumber)
     {
-        units[healNumber].hp += 3;
+        units[healNumber].hp += 6;
         if(units[healNumber].hp > units[healNumber].maxHp) units[healNumber].hp = units[healNumber].maxHp;
-        
     }
 
     protected IEnumerator newHealCoolTime()
@@ -52,16 +53,21 @@ public class RareOneHealler : Unit
             isAttact = true;
             while (true)
             {
-                int randomNumber = Random.Range(0, units.Count);
+                if (unit != null)
+                {
+                    randomNumber = Random.Range(0, unit.Length);
+                }
                 yield return new WaitForSeconds(attackSpeed);
+                anim.SetBool("isWalk", false);
                 anim.SetTrigger("isAttack");
                 speed = 0;
-                if (units.Count != 0)
+                if (unit.Length != 0)
                 {
-                    Instantiate(healEffect, units[randomNumber].transform);
+                    Destroy(Instantiate(healEffect, units[randomNumber].transform), 3f);
                     Healling(randomNumber);
                 }
                 yield return new WaitForSeconds(skillSpeed);
+                anim.SetBool("isWalk", true);
                 speed = maxSpeed;
             }
         }

@@ -168,10 +168,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myState: 0
   myCollider: {fileID: 0}
+  maxHp: 0
   hp: 0
   maxSpeed: 0
   speed: 0
   effect: {fileID: 6771346411554957443}
+  damageUp: {fileID: 4331935754461398423, guid: cac28f7a130d17243a11d466e6e9fdad, type: 3}
 --- !u!1 &6771346410811633067
 GameObject:
   m_ObjectHideFlags: 0

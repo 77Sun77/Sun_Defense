@@ -5,6 +5,7 @@ using UnityEngine;
 public class CommonSuperMan : Unit
 {
     //일반 등급 슈퍼맨
+    public GameObject damageUp;
     void Start()
     {
         maxHp = 10;
@@ -59,6 +60,14 @@ public class CommonSuperMan : Unit
         {
             yield return new WaitForSeconds(5f);
             damage++;
+            GameObject damageUpText = Instantiate(damageUp, gameObject.transform);
+            Destroy(damageUpText, 1f);
+            while (true)
+            {
+                damageUpText.transform.Translate(Vector2.up * 1.2f * Time.deltaTime);
+                yield return null;
+            }
+            
         }
     }
 
