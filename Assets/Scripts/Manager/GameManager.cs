@@ -55,10 +55,5 @@ public class GameManager : MonoBehaviour
         }
 
         material += 0.05f;
-        
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            material -= 100;
-        }
     }
 }

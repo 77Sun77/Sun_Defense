@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonSuperMan : Unit
+public class RareMuscleMan : Unit
 {
-    //일반 등급 슈퍼맨
-    public GameObject damageUp;
+    // 레어 근육맨
+    public GameObject bigStone;
+    public Transform aim;
     void Start()
     {
-        maxHp = 10;
-        hp = 10;
-        damage = 2;
-        attackSpeed = 1.5f;
-        skillSpeed = 0.6f;
-        maxSpeed = 1.5f;
+        maxHp = 20;
+        hp = 20;
+        damage = 5;
+        attackSpeed = 3f;
+        skillSpeed = 1.7f;
+        maxSpeed = 0.5f;
         speed = maxSpeed;
         SetComponent();
-        StartCoroutine(DamageUp());
     }
 
-
+    
     void Update()
     {
         move();
     }
 
-    public override void Attack()
+    void Attack()
     {
-        monster.Hit();
-        monster.Hp = damage;
+        GameObject bigStone = Instantiate(this.bigStone);
+        bigStone.transform.position = aim.position;
     }
     protected IEnumerator newAttackCoolTime()
     {
@@ -47,27 +47,10 @@ public class CommonSuperMan : Unit
                     }
                 }
                 anim.SetTrigger("isAttack");
-                effect.UseEffect(1f);
                 yield return new WaitForSeconds(skillSpeed);
                 Attack();
                 yield return new WaitForSeconds(attackSpeed);
             }
-        }
-    }
-    IEnumerator DamageUp()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(5f);
-            damage++;
-            GameObject damageUpText = Instantiate(damageUp, gameObject.transform);
-            Destroy(damageUpText, 1f);
-            while (damageUpText != null)
-            {
-                damageUpText.transform.Translate(Vector2.up * 1.2f * Time.deltaTime);
-                yield return null;
-            }
-            
         }
     }
 
@@ -97,9 +80,8 @@ public class CommonSuperMan : Unit
                 enemys.Remove(enemys[index]);
             }
         }
+
     }
-
-
     private void OnTriggerExit2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")

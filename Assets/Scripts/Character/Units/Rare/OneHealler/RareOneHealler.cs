@@ -11,8 +11,8 @@ public class RareOneHealler : Unit
     int randomNumber;
     void Start()
     {
-        maxHp = 15;
-        hp = 15;
+        maxHp = 10;
+        hp = 10;
         damage = 0;
         attackSpeed = 5f;
         skillSpeed = 1f;
