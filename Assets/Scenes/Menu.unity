@@ -3928,13 +3928,13 @@ MonoBehaviour:
   - {fileID: 9156273696064358067, guid: 388426c7f6e640a4983c4bdefa4212ad, type: 3}
   - {fileID: 598718490820219237, guid: bbd5f482480866f41bb42c4e198615d2, type: 3}
   rare:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6264919613408268182, guid: ee950d3aee726c544ba9fd7717933478, type: 3}
+  - {fileID: 1375619518435008237, guid: 9b90d99d6a96c1b409cca11bb00d3f16, type: 3}
+  - {fileID: 7649948698057602596, guid: 31c8ab0d3d47dd9478541e05386545a3, type: 3}
+  - {fileID: 3437067881374609832, guid: 64a3a620e727f32418012a35bd680fc2, type: 3}
+  - {fileID: 4496530737288659757, guid: ce19c53c98f196843b779d28bf058d1e, type: 3}
+  - {fileID: 7169475138447549306, guid: f9343fbed24aaf049a565ef2c66ad712, type: 3}
+  - {fileID: 7685468277964988442, guid: c649b8311b419df4d99d46496348cfaf, type: 3}
   legendary:
   - {fileID: 0}
   - {fileID: 0}

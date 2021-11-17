@@ -17,10 +17,15 @@ public class UnitPull : MonoBehaviour
         commonList.Add("얼음마법사");
         commonList.Add("닌자");
         commonList.Add("슈퍼맨");
-        commonList.Add("보류");
+        commonList.Add("나무꾼");
 
         rareList.Add("부활자");
         rareList.Add("자연인");
+        rareList.Add("파동술사");
+        rareList.Add("집사");
+        rareList.Add("모험가");
+        rareList.Add("용사");
+        rareList.Add("근육맨");
 
         legendaryList.Add("태양의 기사");
     }
@@ -33,13 +38,19 @@ public class UnitPull : MonoBehaviour
         int randomNumber = Random.Range(0, commonList.Count);
         print(commonList[randomNumber]+"등장");
         Inventory.holdCommon.Add(commonList[randomNumber]);
-        SavaUnit(randomNumber);
+        SaveCommon(randomNumber);
         commonList.RemoveAt(randomNumber);
     }
 
     public void RarePull()
     {
         if (500 < Money.money) return;
+
+        int randomNumber = Random.Range(0, rareList.Count);
+        print(rareList[randomNumber] + "등장");
+        Inventory.holdRare.Add(rareList[randomNumber]);
+        SaveRare(randomNumber);
+        rareList.RemoveAt(randomNumber);
     }
 
     public void LegendaryPull()
@@ -66,6 +77,20 @@ public class UnitPull : MonoBehaviour
         {
             commonList.Remove(temp[i]);
         }
+
+        for (int i = 0; i < 7; i++)
+        {
+            string unit = PlayerPrefs.GetString(rareList[i]);
+            if (unit != "")
+            {
+                Inventory.holdRare.Add(unit);
+                temp.Add(rareList[i]);
+            }
+        }
+        for (int i = 0; i < temp.Count; i++)
+        {
+            rareList.Remove(temp[i]);
+        }
     }
 
 
@@ -77,11 +102,14 @@ public class UnitPull : MonoBehaviour
 
     }
 
-    void SavaUnit(int num)
+    void SaveCommon(int num)
     {
         PlayerPrefs.SetString(commonList[num], commonList[num]);
     }
-
+    void SaveRare(int num)
+    {
+        PlayerPrefs.SetString(rareList[num], rareList[num]);
+    }
 
     void Update()
     {

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &285355226248504871
+--- !u!1 &7685468277964988440
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 285355226248504866}
-  - component: {fileID: 285355226248504867}
-  - component: {fileID: 285355226248504864}
-  - component: {fileID: 285355226248504865}
-  - component: {fileID: 285355226248504870}
+  - component: {fileID: 7685468277964988441}
+  - component: {fileID: 7685468277964988445}
+  - component: {fileID: 7685468277964988444}
+  - component: {fileID: 7685468277964988443}
+  - component: {fileID: 7685468277964988442}
   m_Layer: 5
-  m_Name: "\uBCF4\uB958"
+  m_Name: DeathMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &285355226248504866
+--- !u!224 &7685468277964988441
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285355226248504871}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 7685468277964988440}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -36,24 +36,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 339.25378, y: 338.50818}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &285355226248504867
+--- !u!222 &7685468277964988445
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285355226248504871}
+  m_GameObject: {fileID: 7685468277964988440}
   m_CullTransparentMesh: 1
---- !u!114 &285355226248504864
+--- !u!114 &7685468277964988444
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285355226248504871}
+  m_GameObject: {fileID: 7685468277964988440}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 7152347622919647566, guid: 380004cb0f4139d4e912bd154226c718, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -77,13 +77,13 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &285355226248504865
+--- !u!114 &7685468277964988443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285355226248504871}
+  m_GameObject: {fileID: 7685468277964988440}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -117,11 +117,11 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 285355226248504864}
+  m_TargetGraphic: {fileID: 7685468277964988444}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598718490820219237, guid: bbd5f482480866f41bb42c4e198615d2, type: 3}
+      - m_Target: {fileID: 7685468277964988442}
         m_TargetAssemblyTypeName: UnitMount, Assembly-CSharp
         m_MethodName: OpenWindow
         m_Mode: 1
@@ -133,22 +133,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &285355226248504870
+--- !u!114 &7685468277964988442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285355226248504871}
+  m_GameObject: {fileID: 7685468277964988440}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 686e8208907d15d4a888ed7dc8b4028a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unit: {fileID: 81396660809880415, guid: 1cdb5b91f16fe244f9da47501aaf810b, type: 3}
-  image: {fileID: 0}
-  unitName: "\uBCF4\uB958"
-  rating: Common
+  unit: {fileID: 8622220590330965449, guid: e1a3021e553a77941ad7ad5d53c9264d, type: 3}
+  image: {fileID: 7152347622919647566, guid: 380004cb0f4139d4e912bd154226c718, type: 3}
+  unitName: "\uBD80\uD65C\uC790"
+  rating: Rare
   hp: 0
   damage: 0
-  cost: 0
+  cost: 300
+  specialAbility: "\uD55C\uBC88 \uBD80\uD65C\uD558\uC5EC \uAC15\uD574\uC9D1\uB2C8\uB2E4."

@@ -37,6 +37,7 @@ public class UnitMounted : MonoBehaviour
                 isMounting = false;
                 GameObject ui = GameObject.Find("UI");
                 Instantiate(warningSpace, ui.transform);
+                mountingUnit.RemoveAt(5);
                 return;
             }
             units.RemoveRange(0, units.Count);

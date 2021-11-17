@@ -18,16 +18,18 @@ public class UnitMount : MonoBehaviour
     {
         UnitManager unit = new UnitManager();
         UnitMounted unitMount = new UnitMounted();
-        for (int i=0;i< UnitManager.units.Count; i++)
+        for (int i = 0; i < UnitManager.units.Count; i++)
         {
-            if(UnitManager.units[i] == unitName)
+            if (UnitManager.units[i] == unitName)
             {
                 Instantiate(UnitMounted.inUse, ui.transform);
                 return;
             }
         }
-        
-        unit.UnitMounting(this.unit, unitName);
+        if (UnitManager.units.Count < 5)
+        {
+            unit.UnitMounting(this.unit, unitName);
+        }
         unitMount.Mounting(gameObject);
     }
 

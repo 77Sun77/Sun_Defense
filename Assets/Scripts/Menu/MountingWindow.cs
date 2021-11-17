@@ -61,6 +61,7 @@ public class MountingWindow : MonoBehaviour
     {
         UnitMounted.mountingUnit.RemoveAt(disableNumber);
         UnitManager.units.RemoveAt(disableNumber);
+        UnitManager.unitButtons.RemoveAt(disableNumber);
         UnitMounted.isMounting = true;
         GameObject unit;
         unit = GameObject.Find("Unit Mounting");
