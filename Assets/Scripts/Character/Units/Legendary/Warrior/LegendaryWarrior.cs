@@ -2,21 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonSheldMan : Unit
+public class LegendaryWarrior : Unit
 {
-    //일반 등급 돌격병
-
-    int deathCount;
+    // 전설 등급 전사
     void Start()
     {
         maxHp = 20;
         hp = 20;
-        maxSpeed = 0.8f;
+        damage = 9;
+        attackSpeed = 3f;
+        skillSpeed = 0.8f;
+        maxSpeed = 0.5f;
         speed = maxSpeed;
         SetComponent();
     }
 
-    private void Update()
+    public override void Attack()
+    {
+        effect.UseEffect(0.7f);
+    }
+
+    void Update()
     {
         move();
     }
@@ -26,6 +32,8 @@ public class CommonSheldMan : Unit
         if (enemy.tag == "Monster")
         {
             enemys.Add(enemy);
+            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
+            StartCoroutine(attackCoolTime());
         }
 
     }
@@ -34,7 +42,8 @@ public class CommonSheldMan : Unit
         if (enemy.tag == "Monster")
         {
             speed = 0;
-            anim.SetBool("isWalk", false);        
+            anim.SetBool("isWalk", false);
+            this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));
         }
 
         for (int index = 0; index < enemys.Count; index++)
@@ -45,6 +54,8 @@ public class CommonSheldMan : Unit
             }
         }
     }
+
+
     private void OnTriggerExit2D(Collider2D enemy)
     {
         if (enemy.tag == "Monster")
