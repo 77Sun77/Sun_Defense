@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnitPull : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class UnitPull : MonoBehaviour
     List<string> rareList = new List<string>();
     List<string> legendaryList = new List<string>();
     List<string> temp = new List<string>();
+
+    public GameObject common, rare, legendary;
     private void SetList()
     {
         commonList.Add("°ÅÁö");
@@ -113,7 +116,20 @@ public class UnitPull : MonoBehaviour
 
     void Update()
     {
-        
+        if (commonList.Count == 0)
+        {
+            common.GetComponent<Button>().interactable = false;
+        }
+        if (rareList.Count == 0)
+        {
+            rare.GetComponent<Button>().interactable = false;
+        }
+        if (legendaryList.Count == 0)
+        {
+            legendary.GetComponent<Button>().interactable = false;
+        }
+
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             PlayerPrefs.DeleteAll();

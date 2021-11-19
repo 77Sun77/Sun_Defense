@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommonSheldMan : Unit
+public class LegendaryGuardian : Unit
 {
-    //일반 등급 돌격병
-
+    // 전설 등급 수호자
     void Start()
     {
-        maxHp = 20;
-        hp = 20;
-        maxSpeed = 0.8f;
+        maxHp = 40;
+        hp = 40;
+        maxSpeed = 0.5f;
         speed = maxSpeed;
         SetComponent();
     }
 
-    private void Update()
+
+    void Update()
     {
         move();
     }
@@ -33,7 +33,7 @@ public class CommonSheldMan : Unit
         if (enemy.tag == "Monster")
         {
             speed = 0;
-            anim.SetBool("isWalk", false);        
+            anim.SetBool("isWalk", false);
         }
 
         for (int index = 0; index < enemys.Count; index++)

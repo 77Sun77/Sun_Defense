@@ -1487,6 +1487,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03a063257fa4b354888eb0caa5c76213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  common: {fileID: 1633552016}
+  rare: {fileID: 1734075893}
+  legendary: {fileID: 1411736826}
 --- !u!1 &930620048
 GameObject:
   m_ObjectHideFlags: 0
