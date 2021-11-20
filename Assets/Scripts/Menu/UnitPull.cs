@@ -30,7 +30,11 @@ public class UnitPull : MonoBehaviour
         rareList.Add("용사");
         rareList.Add("근육맨");
 
-        legendaryList.Add("태양의 기사");
+        legendaryList.Add("왕궁 기사");
+        legendaryList.Add("엘프");
+        legendaryList.Add("가디언");
+        legendaryList.Add("천사");
+        legendaryList.Add("원시족 족장");
     }
 
     
@@ -55,15 +59,21 @@ public class UnitPull : MonoBehaviour
         SaveRare(randomNumber);
         rareList.RemoveAt(randomNumber);
     }
-
     public void LegendaryPull()
     {
         if (1000 < Money.money) return;
+
+        int randomNumber = Random.Range(0, legendaryList.Count);
+        print(legendaryList[randomNumber] + "등장");
+        Inventory.holdLegendary.Add(legendaryList[randomNumber]);
+        SaveLegendary(randomNumber);
+        legendaryList.RemoveAt(randomNumber);
     }
 
 
     void LoadingUnits()
     {
+        // 일반 유닛 로딩
         Inventory.holdCommon.Add("기사");
         Inventory.holdCommon.Add("궁수");
         for (int i = 0; i < 8; i++)
@@ -81,6 +91,7 @@ public class UnitPull : MonoBehaviour
             commonList.Remove(temp[i]);
         }
 
+        // 희귀 유닛 로딩
         for (int i = 0; i < 7; i++)
         {
             string unit = PlayerPrefs.GetString(rareList[i]);
@@ -93,6 +104,21 @@ public class UnitPull : MonoBehaviour
         for (int i = 0; i < temp.Count; i++)
         {
             rareList.Remove(temp[i]);
+        }
+
+        // 전설 유닛 로딩
+        for (int i = 0; i < 5; i++)
+        {
+            string unit = PlayerPrefs.GetString(legendaryList[i]);
+            if (unit != "")
+            {
+                Inventory.holdLegendary.Add(unit);
+                temp.Add(legendaryList[i]);
+            }
+        }
+        for (int i = 0; i < temp.Count; i++)
+        {
+            legendaryList.Remove(temp[i]);
         }
     }
 
@@ -112,6 +138,10 @@ public class UnitPull : MonoBehaviour
     void SaveRare(int num)
     {
         PlayerPrefs.SetString(rareList[num], rareList[num]);
+    }
+    void SaveLegendary(int num)
+    {
+        PlayerPrefs.SetString(legendaryList[num], legendaryList[num]);
     }
 
     void Update()

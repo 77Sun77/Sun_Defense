@@ -3939,11 +3939,11 @@ MonoBehaviour:
   - {fileID: 7169475138447549306, guid: f9343fbed24aaf049a565ef2c66ad712, type: 3}
   - {fileID: 7685468277964988442, guid: c649b8311b419df4d99d46496348cfaf, type: 3}
   legendary:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2869564790657514660, guid: e98b326d36e53a04a91cf323b91215ca, type: 3}
+  - {fileID: 1807684179314827664, guid: a113cc29bbb30064a827a7897c093c2a, type: 3}
+  - {fileID: 5026738436270149008, guid: afbfec996c3201a4fb5dc18b33282983, type: 3}
+  - {fileID: 709694769701368328, guid: fd4aefa692cc96742b8fc5409daee7dd, type: 3}
+  - {fileID: 3826768411549311276, guid: eafdfae429c85ec4785a23f111337688, type: 3}
 --- !u!1 &1770575950
 GameObject:
   m_ObjectHideFlags: 0

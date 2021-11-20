@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public static List<string> holdCommon = new List<string>();
     public static List<string> holdRare = new List<string>();
+    public static List<string> holdLegendary = new List<string>();
     public Transform inventoryPlace;
     public GameObject mountingWindow;
     public static GameObject mountingWin;
@@ -55,6 +56,18 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < inventoryPlace.childCount; i++)
         {
             Destroy(inventoryPlace.GetChild(i).gameObject);
+        }
+
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = 0; j < holdLegendary.Count; j++)
+            {
+
+                if (legendary[i].unitName == holdLegendary[j])
+                {
+                    Instantiate(legendary[i].gameObject, inventoryPlace);
+                }
+            }
         }
     }
     private void OnEnable()
