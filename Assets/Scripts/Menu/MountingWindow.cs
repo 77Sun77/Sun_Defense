@@ -14,8 +14,8 @@ public class MountingWindow : MonoBehaviour
 
     string rating;
     string unitName;
-    int hp;
-    int damage;
+    string hp;
+    string damage;
     int cost;
     UnitMount unit;
 
@@ -26,7 +26,7 @@ public class MountingWindow : MonoBehaviour
     [Header("특수 능력")]
     int disableNumber;
     public Text specialAbility;
-    public void SetContect(string rating, int hp, int damage, int cost, UnitMount unit, string specialAbility)
+    public void SetContect(string rating, string hp, string damage, int cost, UnitMount unit, string specialAbility)
     {
         this.rating = rating;
         this.unitName = unit.unitName; 

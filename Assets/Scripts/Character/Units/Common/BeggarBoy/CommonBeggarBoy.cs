@@ -7,9 +7,9 @@ public class CommonBeggarBoy : Unit
     // 일반 등급 가난한 소년
     void Start()
     {
-        maxHp = 6;
-        hp = 6;
-        damage = 2;
+        maxHp = 4;
+        hp = 4;
+        damage = 1;
         attackSpeed = 0.3f;
         skillSpeed = 0.3f;
         maxSpeed = 3f;

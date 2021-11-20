@@ -10,9 +10,9 @@ public class CommonBleeder : Unit
 
     void Start()
     {
-        maxHp = 5;
-        hp = 6;
-        damage = 2;
+        maxHp = 4;
+        hp = 4;
+        damage = 1;
         attackSpeed = 1.5f;
         skillSpeed = 0.5f;
         maxSpeed = 1f;

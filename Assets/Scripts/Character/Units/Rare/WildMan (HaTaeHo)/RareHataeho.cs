@@ -7,8 +7,8 @@ public class RareHataeho : Unit
     // 레어 등급 하태호
     void Start()
     {
-        maxHp = 12;
-        hp = 12;
+        maxHp = 15;
+        hp = 15;
         damage = 5;
         attackSpeed = 1.5f;
         skillSpeed = 1.3f;

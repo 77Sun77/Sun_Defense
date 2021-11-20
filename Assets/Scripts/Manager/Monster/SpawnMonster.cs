@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnMonster : MonoBehaviour
 {
     public GameObject basicMonster;
-
+    
     public void spawnBasic()
     {
         Instantiate(basicMonster);
@@ -15,7 +15,8 @@ public class SpawnMonster : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    
+
     void Update()
     {
         

@@ -8,7 +8,7 @@ public class BasicMonster : Monster
     {
         maxHp = 10;
         hp = 10;
-        damage = 5;
+        damage = 4;
         attackSpeed = 2f;
         skillSpeed = 0.9f;
         maxSpeed = 0.7f;

@@ -35,8 +35,8 @@ public class UnitMount : MonoBehaviour
 
     [Header("Stats")]
     public string rating;
-    public int hp;
-    public int damage;
+    public string hp;
+    public string damage;
     public int cost;
     public string specialAbility;
 
