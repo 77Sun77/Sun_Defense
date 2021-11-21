@@ -258,12 +258,12 @@ public class GameManager : MonoBehaviour
         monsterController.spawnBasic();
         yield return new WaitForSeconds(3f);
         monsterController.spawnBasic();
-        
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+
         yield return new WaitForSeconds(4f);
-        monsterController.spawnRanged();
-        yield return new WaitForSeconds(2f);
-        monsterController.spawnRanged();
-        yield return new WaitForSeconds(2f);
         monsterController.spawnRanged();
         yield return new WaitForSeconds(2f);
         monsterController.spawnRanged();

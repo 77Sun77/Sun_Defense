@@ -73,6 +73,11 @@ public class UnitPull : MonoBehaviour
 
     void LoadingUnits()
     {
+        // 유닛 초기화
+        Inventory.holdCommon.Clear();
+        Inventory.holdRare.Clear();
+        Inventory.holdLegendary.Clear();
+
         // 일반 유닛 로딩
         Inventory.holdCommon.Add("기사");
         Inventory.holdCommon.Add("궁수");

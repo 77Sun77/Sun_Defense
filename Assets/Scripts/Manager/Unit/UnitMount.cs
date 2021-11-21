@@ -7,13 +7,13 @@ public class UnitMount : MonoBehaviour
     public GameObject unit;
     public Sprite image;
     public string unitName;
-    GameObject unitParrent;
+    GameObject unitParent;
 
     GameObject ui;
     void Start()
     {
         ui = GameObject.Find("UI");
-        unitParrent = GameObject.Find("MountedUnits");
+        unitParent = GameObject.Find("MountedUnits");
     }
 
     public void Mounting()
@@ -32,7 +32,7 @@ public class UnitMount : MonoBehaviour
         {
             unit.UnitMounting(this.unit, unitName);
         }
-        GameObject unitGO = Instantiate(gameObject, unitParrent.transform);
+        GameObject unitGO = Instantiate(gameObject, unitParent.transform);
         unitMount.Mounting(unitGO);
     }
 

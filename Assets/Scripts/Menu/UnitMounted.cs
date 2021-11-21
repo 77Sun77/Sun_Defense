@@ -48,11 +48,10 @@ public class UnitMounted : MonoBehaviour
                     Destroy(place[i].transform.GetChild(j).gameObject);
                 }
             }
-            
+
             for (int i = 0; i < mountingUnit.Count; i++)
             {
-                units.Add(Instantiate(mountingUnit[i], place[i].transform));
-
+                units.Add(Instantiate(mountingUnit[i], place[i].transform)); 
                 RectTransform unitTr = units[i].GetComponent<RectTransform>();
                 unitTr.sizeDelta = new Vector2(200, 200);
                 unitTr.localPosition = new Vector2(0, 0);

@@ -7,6 +7,7 @@ public class Monster : Character
     protected Unit unit;
     protected Castle castle;
     protected bool isCastleAttack;
+    protected IEnumerator coroutine;
     protected IEnumerator attackCoolTime()
     {
         if (!isAttact)

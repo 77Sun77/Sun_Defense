@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
     public static List<string> holdRare = new List<string>();
     public static List<string> holdLegendary = new List<string>();
     public Transform inventoryPlace;
+    List<GameObject> inventoryChildren = new List<GameObject>();
     public GameObject mountingWindow;
     public static GameObject mountingWin;
 
@@ -20,7 +21,6 @@ public class Inventory : MonoBehaviour
     [Header("Legendary")]
     public UnitMount[] legendary = new UnitMount[5];
 
-
     void SetCommon()
     {
         for (int i = 0; i < 10; i++)
@@ -31,11 +31,12 @@ public class Inventory : MonoBehaviour
                 if (common[i].unitName == holdCommon[j])
                 {
                     Instantiate(common[i].gameObject, inventoryPlace);
+
                 }
             }
         }
     }
-
+   
     void setRare()
     {
         for (int i = 0; i < 7; i++)
@@ -55,6 +56,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < inventoryPlace.childCount; i++)
         {
+
             Destroy(inventoryPlace.GetChild(i).gameObject);
         }
      
@@ -62,7 +64,7 @@ public class Inventory : MonoBehaviour
         {
             for (int j = 0; j < holdLegendary.Count; j++)
             {
-
+                print("이거 왜 두번");
                 if (legendary[i].unitName == holdLegendary[j])
                 {
                     Instantiate(legendary[i].gameObject, inventoryPlace);
@@ -70,6 +72,12 @@ public class Inventory : MonoBehaviour
             }
         }
     }
+
+    void Start()
+    {
+        
+    }
+
     private void OnEnable()
     {
         setLegendary();
@@ -77,6 +85,10 @@ public class Inventory : MonoBehaviour
         SetCommon();
         
         mountingWin = mountingWindow;
+        UnitMounted.isMounting = true;
+        GameObject unit;
+        unit = GameObject.Find("Unit Mounting");
+        unit.GetComponent<UnitMounted>().SetMounting();
     }
 
     

@@ -45,21 +45,13 @@ public class BasicMonster : Monster
         {
             enemys.Add(Unit);
             this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
-            StartCoroutine(attackCoolTime());
+            coroutine = attackCoolTime();
+            StartCoroutine(coroutine);
         }
-
-        if(Unit.tag == "Castle" && enemys.Count == 0) 
-        {
-            isCastleAttack = true;
-            this.castle = Unit.GetComponent<Castle>();
-            StopCoroutine(attackCoolTime());
-            StartCoroutine(CastleAttackCoolTime());
-        }
-
     }
     private void OnTriggerStay2D(Collider2D Unit)
     {
-        if (Unit.tag == "Unit")
+        if (Unit.tag == "Unit" && !isCastleAttack)
         {
             speed = 0;
             anim.SetBool("isWalk", false);
@@ -77,6 +69,15 @@ public class BasicMonster : Monster
             {
                 enemys.Remove(enemys[index]);
             }
+        }
+
+        if (Unit.tag == "Castle" && enemys.Count == 0 && !isCastleAttack)
+        {
+            isCastleAttack = true;
+            this.castle = Unit.GetComponent<Castle>();
+            StopCoroutine(coroutine);
+            coroutine = CastleAttackCoolTime();
+            StartCoroutine(coroutine);
         }
     }
     private void OnTriggerExit2D(Collider2D Unit)
