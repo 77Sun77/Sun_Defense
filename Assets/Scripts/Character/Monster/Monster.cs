@@ -38,10 +38,6 @@ public class Monster : Character
             isAttact = true;
             while (true)
             {
-                if (castle.hp <= 0)
-                {
-                    // 게임 종료
-                }
                 anim.SetTrigger("isAttack");
                 yield return new WaitForSeconds(skillSpeed);
                 CastleAttack();
@@ -64,6 +60,8 @@ public class Monster : Character
     public override void Death()
     {
         base.Death();
+        if (deathCount == 0) return;
         GameManager.count -= 1;
+        deathCount = 0;
     }
 }

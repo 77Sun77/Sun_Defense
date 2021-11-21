@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 6756722492610950368, guid: 59e7f3da4856c8c4ab32ba27a43673de, type: 3}
-  cost: 0
+  cost: 350
 --- !u!1 &5535331295742254431
 GameObject:
   m_ObjectHideFlags: 0

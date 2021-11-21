@@ -17,6 +17,8 @@ public class BasicMonster : Monster
         SetComponent();
 
         isCastleAttack = false;
+
+        deathCount = 1;
     }
 
     void Update()
@@ -50,6 +52,7 @@ public class BasicMonster : Monster
         {
             isCastleAttack = true;
             this.castle = Unit.GetComponent<Castle>();
+            StopCoroutine(attackCoolTime());
             StartCoroutine(CastleAttackCoolTime());
         }
 

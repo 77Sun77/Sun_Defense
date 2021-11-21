@@ -23,6 +23,7 @@ public class Character : MonoBehaviour
     protected Effect effect;
 
     protected bool isAttact;
+    public int deathCount;
     public virtual void Attack()
     {
 

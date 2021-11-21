@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
         {
             Destroy(inventoryPlace.GetChild(i).gameObject);
         }
-
+     
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < holdLegendary.Count; j++)

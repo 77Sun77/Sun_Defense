@@ -21,12 +21,12 @@ public class UnitMounted : MonoBehaviour
         isMounting = false;
         inUse = warningInUse;
     }
-
+    
     public void Mounting(GameObject unit)
     {
         mountingUnit.Add(unit);
         isMounting = true;
-    }
+    } 
 
     public void SetMounting()
     {

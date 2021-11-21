@@ -147,7 +147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fd7849b179840b44886bc9b58fe396a1, type: 3}
+  m_Sprite: {fileID: 7152347622919647566, guid: 380004cb0f4139d4e912bd154226c718, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -226,4 +226,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 6941800402648737193, guid: 9245daa1534e19544943f8562769ed66, type: 3}
-  cost: 0
+  cost: 250

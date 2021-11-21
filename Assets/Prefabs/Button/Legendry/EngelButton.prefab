@@ -226,4 +226,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: {fileID: 1085062526877903251, guid: 96c2d8357b2135f4db0cd5ddd6a309f6, type: 3}
-  cost: 0
+  cost: 200
