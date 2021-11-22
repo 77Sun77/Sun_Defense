@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     SpawnMonster monsterController;
-    int stage=9;
+    int stage=10;
     
     public static int count;
     public Text countText;
@@ -283,5 +283,23 @@ public class GameManager : MonoBehaviour
         monsterController.spawnRanged();
         yield return new WaitForSeconds(2f);
         monsterController.spawnRanged();
+    }
+
+    IEnumerator stage10()
+    {
+        count = 5;
+        getMoney = 600;
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(2f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(2f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(2f);
+        monsterController.spawnBasic();
+
+        yield return new WaitForSeconds(9f);
+        monsterController.spawnBoss2();
+
     }
 }

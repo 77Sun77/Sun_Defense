@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage5Boss : Monster
+public class Stage10Boss : Monster
 {
-    // Start is called before the first frame update
+    public GameObject attack1, attack2;
     void Start()
     {
         maxHp = 30;
         hp = 30;
         damage = 8;
         attackSpeed = 1f;
-        skillSpeed = 0.8f;
+        skillSpeed = 0.5f;
         maxSpeed = 0.7f;
         speed = maxSpeed;
 
@@ -21,7 +21,7 @@ public class Stage5Boss : Monster
         deathCount = 1;
     }
 
-    
+
     void Update()
     {
         move();
@@ -29,25 +29,86 @@ public class Stage5Boss : Monster
 
     public override void Attack()
     {
+        
         unit.Hit();
-        unit.Hp = damage;
-        effect.UseEffect(0.5f);
+        unit.Hp = 9;
+        Invoke("attack1False", 0.4f);
+
+    }
+    void attack1False()
+    {
+        attack1.SetActive(false);
     }
 
+    void Attack2()
+    {
+        attack2.SetActive(true);
+    }
+
+    
     public override void CastleAttack()
     {
         castle.Hit();
-        castle.hp -= damage;
-        effect.UseEffect(0.5f);
+        castle.hp -= 9;
+        Invoke("attack1False", 0.4f);
     }
-
+    protected IEnumerator CastleAttackCoolTime()
+    {
+        if (!isAttact)
+        {
+            isAttact = true;
+            while (true)
+            {
+                attack1.SetActive(true);
+                anim.SetTrigger("isAttack");
+                yield return new WaitForSeconds(skillSpeed);
+                CastleAttack();
+                yield return new WaitForSeconds(attackSpeed);
+            }
+        }
+    }
+    IEnumerator newAttackCooltime()
+    {
+        if (!isAttact)
+        {
+            isAttact = true;
+            while (true)
+            { 
+                if (unit.Hp <= 0)
+                {
+                    enemys.Remove(unit.myCollider);
+                    if (enemys.Count == 0)
+                    {
+                        isAttact = false;
+                        break;
+                    }
+                }
+                anim.SetTrigger("isAttack");
+                if (unit.Hp > 5)
+                {
+                    attack1.SetActive(true);
+                    yield return new WaitForSeconds(0.5f);
+                    Attack();
+                    yield return new WaitForSeconds(2);
+                }
+                else
+                {
+                    yield return new WaitForSeconds(0.3f);
+                    Attack2();
+                    yield return new WaitForSeconds(2);
+                }
+                
+                
+            }
+        }
+    }
     private void OnTriggerEnter2D(Collider2D Unit)
     {
         if (Unit.tag == "Unit" && !isCastleAttack)
         {
             enemys.Add(Unit);
             this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
-            coroutine = attackCoolTime();
+            coroutine = newAttackCooltime();
             StartCoroutine(coroutine);
         }
 

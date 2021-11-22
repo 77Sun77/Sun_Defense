@@ -10,6 +10,7 @@ public class SpawnMonster : MonoBehaviour
 
     [Header("Boss")]
     public GameObject boss1;
+    public GameObject boss2;
     
     public void spawnBasic()
     {
@@ -34,6 +35,10 @@ public class SpawnMonster : MonoBehaviour
     public void spawnBoss1()
     {
         Instantiate(boss1);
+    }
+    public void spawnBoss2()
+    {
+        Instantiate(boss2);
     }
 
 

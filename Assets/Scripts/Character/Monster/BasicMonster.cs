@@ -41,12 +41,13 @@ public class BasicMonster : Monster
 
     private void OnTriggerEnter2D(Collider2D Unit)
     {
-        if (Unit.tag == "Unit" && !isCastleAttack)
+        if (Unit.tag == "Unit" && isCastleAttack == false)
         {
             enemys.Add(Unit);
             this.unit = (Unit)enemys[0].GetComponent(typeof(Unit));
             coroutine = attackCoolTime();
             StartCoroutine(coroutine);
+
         }
     }
     private void OnTriggerStay2D(Collider2D Unit)
@@ -71,13 +72,13 @@ public class BasicMonster : Monster
             }
         }
 
-        if (Unit.tag == "Castle" && enemys.Count == 0 && !isCastleAttack)
+        if (Unit.tag == "Castle" && enemys.Count == 0 && isCastleAttack == false)
         {
             isCastleAttack = true;
             this.castle = Unit.GetComponent<Castle>();
-            StopCoroutine(coroutine);
-            coroutine = CastleAttackCoolTime();
-            StartCoroutine(coroutine);
+            if(coroutine != null) StopCoroutine(coroutine);
+            isAttact = false;
+            StartCoroutine(CastleAttackCoolTime());
         }
     }
     private void OnTriggerExit2D(Collider2D Unit)

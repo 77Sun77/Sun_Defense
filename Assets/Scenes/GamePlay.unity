@@ -2737,6 +2737,7 @@ MonoBehaviour:
   basicMonster: {fileID: 2809528003101688569, guid: 1e4f02a7ef2558b4db311ed524b4a721, type: 3}
   rangedMonster: {fileID: 1945035799901829943, guid: 265a0cb47db9525488e1bf2df2c7d9cd, type: 3}
   boss1: {fileID: 5569650757367601686, guid: f9fba96b577c5914382a21d4d126861d, type: 3}
+  boss2: {fileID: 883773409621297984, guid: 89f4ad54f95d01242b4e572cca95a5cb, type: 3}
 --- !u!114 &1332005019
 MonoBehaviour:
   m_ObjectHideFlags: 0

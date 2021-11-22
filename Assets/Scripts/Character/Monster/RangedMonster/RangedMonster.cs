@@ -71,9 +71,9 @@ public class RangedMonster : Monster
         {
             isCastleAttack = true;
             this.castle = Unit.GetComponent<Castle>();
-            StopCoroutine(coroutine);
-            coroutine = CastleAttackCoolTime();
-            StartCoroutine(coroutine);
+            if (coroutine != null) StopCoroutine(coroutine);
+            isAttact = false;
+            StartCoroutine(CastleAttackCoolTime());
         }
 
         for (int index = 0; index < enemys.Count; index++)
