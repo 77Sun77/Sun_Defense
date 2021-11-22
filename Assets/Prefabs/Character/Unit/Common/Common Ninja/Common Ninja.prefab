@@ -168,10 +168,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myState: 0
   myCollider: {fileID: 0}
-  hp: 100
+  maxHp: 0
+  hp: 0
   maxSpeed: 0
   speed: 0
   effect: {fileID: 0}
+  deathCount: 0
   shuriken: {fileID: 4295266629136171604, guid: 4b42da75b3f166447aec4e841334e810, type: 3}
   shurikenAim: {fileID: 8663663659500021802}
 --- !u!1 &8663663659500021801

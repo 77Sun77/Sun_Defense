@@ -10,8 +10,8 @@ public class CommonNinja : Unit
 
     void Start()
     {
-        maxHp = 10;
-        hp = 10;
+        maxHp = 5;
+        hp = 5;
         damage = 3;
         attackSpeed = 1f;
         skillSpeed = 0.5f;
