@@ -49,7 +49,7 @@ public class Monster : Character
 
     public virtual void CastleAttack()
     {
-
+        
     }
     
 

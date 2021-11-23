@@ -7,11 +7,12 @@ public class SpawnMonster : MonoBehaviour
     [Header("Monster")]
     public GameObject basicMonster;
     public GameObject rangedMonster;
+    public GameObject strongMonster;
 
     [Header("Boss")]
     public GameObject boss1;
     public GameObject boss2;
-    
+    public GameObject blackObject, boss3;
     public void spawnBasic()
     {
         Instantiate(basicMonster);
@@ -22,7 +23,10 @@ public class SpawnMonster : MonoBehaviour
         Instantiate(rangedMonster);
     }
 
-
+    public void spawnStrong()
+    {
+        Instantiate(strongMonster);
+    }
 
 
 
@@ -41,6 +45,15 @@ public class SpawnMonster : MonoBehaviour
         Instantiate(boss2);
     }
 
+
+    public void spawnBlackObject()
+    {
+        Instantiate(blackObject);
+    }
+    public void spawnBoss3()
+    {
+        Instantiate(boss3);
+    }
 
     void Start()
     {
