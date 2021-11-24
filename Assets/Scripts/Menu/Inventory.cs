@@ -64,7 +64,6 @@ public class Inventory : MonoBehaviour
         {
             for (int j = 0; j < holdLegendary.Count; j++)
             {
-                print("이거 왜 두번");
                 if (legendary[i].unitName == holdLegendary[j])
                 {
                     Instantiate(legendary[i].gameObject, inventoryPlace);

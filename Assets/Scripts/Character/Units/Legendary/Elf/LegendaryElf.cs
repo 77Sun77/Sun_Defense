@@ -7,6 +7,7 @@ public class LegendaryElf : Unit
     // 전설 등급 엘프
 
     public GameObject arrow;
+    public GameObject aim;
     void Start()
     {
         maxHp = 10;
@@ -27,7 +28,9 @@ public class LegendaryElf : Unit
 
     public override void Attack()
     {
-        arrow.SetActive(true);
+        GameObject attack = Instantiate(arrow);
+        attack.transform.position = aim.transform.position;
+        Destroy(attack, 2f);
     }
 
     private void OnTriggerEnter2D(Collider2D enemy)

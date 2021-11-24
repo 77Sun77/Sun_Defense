@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     SpawnMonster monsterController;
-    int stage=15;
+    int stage=19;
     
     public static int count;
     public Text countText;
@@ -431,10 +431,158 @@ public class GameManager : MonoBehaviour
     IEnumerator stage15()
     {
         count = 1;
-        getMoney = 150;
+        getMoney = 300;
         yield return new WaitForSeconds(0.1f);
         monsterController.spawnBoss3();
         
 
     }
+
+    IEnumerator stage16()
+    {
+        count = 15;
+        getMoney = 250;
+        
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+
+        yield return new WaitForSeconds(5f);
+        monsterController.spawnFast();
+
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+
+    }
+
+    IEnumerator stage17()
+    {
+        count = 15;
+        getMoney = 250;
+
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(5f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+
+    }
+
+    IEnumerator stage18()
+    {
+        count = 10;
+        getMoney = 250;
+
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+
+    }
+    IEnumerator stage19()
+    {
+        count = 15;
+        getMoney = 250;
+
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnBasic();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnStrong();
+
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnRanged();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnRanged();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnRanged();
+
+        yield return new WaitForSeconds(5f);
+        monsterController.spawnFast();
+        yield return new WaitForSeconds(3f);
+        monsterController.spawnFast();
+
+    }
+
+    
+
 }

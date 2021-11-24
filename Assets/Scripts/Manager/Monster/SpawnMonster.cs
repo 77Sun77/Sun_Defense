@@ -8,6 +8,7 @@ public class SpawnMonster : MonoBehaviour
     public GameObject basicMonster;
     public GameObject rangedMonster;
     public GameObject strongMonster;
+    public GameObject fastMonster;
 
     [Header("Boss")]
     public GameObject boss1;
@@ -28,6 +29,10 @@ public class SpawnMonster : MonoBehaviour
         Instantiate(strongMonster);
     }
 
+    public void spawnFast()
+    {
+        Instantiate(fastMonster);
+    }
 
 
 

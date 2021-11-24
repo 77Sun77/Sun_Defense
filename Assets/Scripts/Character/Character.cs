@@ -24,6 +24,8 @@ public class Character : MonoBehaviour
 
     protected bool isAttact;
     public int deathCount;
+
+    public GameObject smoke;
     public virtual void Attack()
     {
 
@@ -46,10 +48,14 @@ public class Character : MonoBehaviour
         anim = GetComponent<Animator>();
         mySprite = GetComponent<SpriteRenderer>();
         myCollider = GetComponent<Collider2D>();
+        smoke = GameObject.Find("Smoke");
     }
 
     public virtual void Death()
     {
+        GameObject smoke = Instantiate(this.smoke);
+        smoke.transform.position = gameObject.transform.position;
+        Destroy(smoke, 3);
         Destroy(gameObject);
     }
     

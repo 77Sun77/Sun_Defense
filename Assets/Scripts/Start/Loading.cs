@@ -25,19 +25,19 @@ public class Loading : MonoBehaviour
             loadingBar.value += 0.6f;
             yield return new WaitForFixedUpdate();
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         while (loadingBar.value <= 63)
         {
             loadingBar.value += 0.6f;
             yield return new WaitForFixedUpdate();
         }
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         while (loadingBar.value <= 77)
         {
             loadingBar.value += 0.6f;
             yield return new WaitForFixedUpdate();
         }
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         while (loadingBar.value < 92)
         {
             loadingBar.value += 1f;
@@ -49,7 +49,7 @@ public class Loading : MonoBehaviour
             loadingBar.value += 1.8f;
             yield return new WaitForFixedUpdate();
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         while (loadingBar.value < 100)
         {
             loadingBar.value += 0.5f;

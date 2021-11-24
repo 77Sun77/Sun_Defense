@@ -20,8 +20,8 @@ public class GameOver : MonoBehaviour
         {
             yield return new WaitForFixedUpdate();
             myText.color = new Color(255 / 255, 255 / 255, 255 / 255, alpha / 255);
-            if(twoOutline == null) oneOutline.effectColor = new Color(0 / 255, 65 / 255, 255 / 255, alpha / 255);
-            else twoOutline.effectColor = new Color(255 / 255, 0 / 255, 0 / 255, alpha / 255);
+            if(twoOutline == null) oneOutline.effectColor = new Color(0 / 255, 116 / 255, 255 / 255, alpha / 255);
+            else twoOutline.effectColor = new Color(255 / 255, 56 / 255, 0 / 255, alpha / 255);
             alpha += 6;
         }
         yield return new WaitForSeconds(1f);
