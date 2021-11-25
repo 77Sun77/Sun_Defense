@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     int money;
     int getMoney;
 
+    AudioSource bgm;
+
     void Start()
     {
         materialSlider.maxValue = 400;
@@ -80,6 +82,7 @@ public class GameManager : MonoBehaviour
         money = Money.money;
         moneyText.text = money + "+" + getMoney;
         Money.money += getMoney;
+        PlayerPrefs.SetInt("money", Money.money);
     }
     void GameLose()
     {

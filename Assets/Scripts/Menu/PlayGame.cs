@@ -11,9 +11,10 @@ public class PlayGame : MonoBehaviour
         
     }
 
-    public void MoveScene()
+    public void Play()
     {
-        SceneManager.LoadScene("GamePlay");
+        MoveScene.nextScene = "GamePlay";
+        SceneManager.LoadScene("LoadingScene");
     }
     void Update()
     {

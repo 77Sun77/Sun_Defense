@@ -11,8 +11,17 @@ public class Loading : MonoBehaviour
 
     bool isPlay;
     public Button playButton;
+
+    int access;
     void Start()
     {
+        access = PlayerPrefs.GetInt("access");
+        if(access == 0)
+        {
+            access++;
+            Money.money += 100;
+            PlayerPrefs.SetInt("money", Money.money);
+        }
         loadingBar.value = 0;
         isPlay = false;
         StartCoroutine(load());
@@ -62,7 +71,8 @@ public class Loading : MonoBehaviour
 
     public void moveMenu()
     {
-        SceneManager.LoadScene("Menu");
+        MoveScene.nextScene = "Menu";
+        SceneManager.LoadScene("LoadingScene");
     }
 
     void Update()

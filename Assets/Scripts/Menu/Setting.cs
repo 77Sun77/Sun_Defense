@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Setting : MonoBehaviour
 {
@@ -72,8 +73,9 @@ public class Setting : MonoBehaviour
         effectOff.sprite = effectCheckImage;
         PlayerPrefs.SetString("Effect", "Off");
     }
-    void Update()
+    public void ResetGameData()
     {
-        
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("Start");
     }
 }

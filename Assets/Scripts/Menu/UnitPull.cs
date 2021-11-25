@@ -40,7 +40,7 @@ public class UnitPull : MonoBehaviour
     
     public void CommonPull()
     {
-        if (100 < Money.money) return;
+        if (100 > Money.money) return;
 
         int randomNumber = Random.Range(0, commonList.Count);
         print(commonList[randomNumber]+"등장");
@@ -51,7 +51,7 @@ public class UnitPull : MonoBehaviour
 
     public void RarePull()
     {
-        if (500 < Money.money) return;
+        if (500 > Money.money) return;
 
         int randomNumber = Random.Range(0, rareList.Count);
         print(rareList[randomNumber] + "등장");
@@ -61,7 +61,7 @@ public class UnitPull : MonoBehaviour
     }
     public void LegendaryPull()
     {
-        if (1000 < Money.money) return;
+        if (1000 > Money.money) return;
 
         int randomNumber = Random.Range(0, legendaryList.Count);
         print(legendaryList[randomNumber] + "등장");
