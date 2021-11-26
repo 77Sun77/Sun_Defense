@@ -35,6 +35,11 @@ public class RareHataeho : Unit
             isAttact = true;
             while (true)
             {
+                if (enemys.Count == 0)
+                {
+                    isAttact = false;
+                    break;
+                }
                 if (monster.Hp <= 0)
                 {
                     enemys.Remove(monster.myCollider);

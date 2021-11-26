@@ -134,7 +134,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3494370064288771374, guid: 4e55273f7aa2fc24085661b3e5f2932e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19243c09c6d1b514685a2900d0c5c791, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -225,10 +225,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myState: 0
   myCollider: {fileID: 0}
+  maxHp: 0
   hp: 0
   maxSpeed: 0
   speed: 0
   effect: {fileID: 2307057503410501262}
+  deathCount: 0
+  smoke: {fileID: 0}
 --- !u!1 &2307057503410501263
 GameObject:
   m_ObjectHideFlags: 0

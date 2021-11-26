@@ -50,6 +50,11 @@ public class RareResurrected : Unit
             isAttact = true;
             while (true)
             {
+                if (enemys.Count == 0)
+                {
+                    isAttact = false;
+                    break;
+                }
                 if (monster.Hp <= 0)
                 {
                     enemys.Remove(monster.myCollider);
@@ -59,6 +64,7 @@ public class RareResurrected : Unit
                         break;
                     }
                 }
+                
                 anim.SetTrigger("isAttack");
                 effect.UseEffect(1.3f);
                 yield return new WaitForSeconds(skillSpeed);

@@ -18,7 +18,7 @@ public class FastMonster : Monster
 
         deathCount = 1;
 
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 5f);
     }
 
     // Update is called once per frame

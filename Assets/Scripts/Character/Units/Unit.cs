@@ -14,6 +14,11 @@ public class Unit : Character
             isAttact = true;
             while (true)
             {
+                if (enemys.Count == 0)
+                {
+                    isAttact = false;
+                    break; 
+                }
                 if (monster.Hp <= 0)
                 {
                     enemys.Remove(monster.myCollider);
@@ -33,5 +38,18 @@ public class Unit : Character
     protected void move()
     {
         transform.Translate(Vector2.right * speed * Time.deltaTime);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "Monster")
+        {
+            enemys.Remove(collision);
+            if(enemys.Count == 0)
+            {
+                isAttact = true;
+                StopAllCoroutines();
+            }
+        }
     }
 }
