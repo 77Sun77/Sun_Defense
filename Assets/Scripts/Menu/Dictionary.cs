@@ -18,9 +18,9 @@ public class Dictionary : MonoBehaviour
     Button[] monsterButton = new Button[5];
 
     [Header("Boss")]
-    public Image[] imageSpace2 = new Image[6];
-    public Sprite[] spriteSpace2 = new Sprite[6];
-    Button[] bossButton = new Button[6];
+    public Image[] imageSpace2 = new Image[7];
+    public Sprite[] spriteSpace2 = new Sprite[7];
+    Button[] bossButton = new Button[7];
     private void OnEnable()
     {
         isChecked = "basic";
@@ -29,7 +29,7 @@ public class Dictionary : MonoBehaviour
             monsterButton[i] = imageSpace[i].GetComponent<Button>();
             monsterButton[i].interactable = false;
         }
-        for(int i = 0; i < 6; i++)
+        for(int i = 0; i < 7; i++)
         {
             bossButton[i] = imageSpace2[i].GetComponent<Button>();
             bossButton[i].interactable = false;
@@ -102,29 +102,35 @@ public class Dictionary : MonoBehaviour
             imageSpace2[1].color = new Color(255 / 255, 255 / 255, 255 / 255, 255 / 255);
             bossButton[1].interactable = true;
         }
-        if (PlayerPrefs.GetInt("stage") >= 5)
+        if (PlayerPrefs.GetInt("stage") >= 15)
         {
             imageSpace2[2].sprite = spriteSpace2[2];
             imageSpace2[2].color = new Color(255 / 255, 255 / 255, 255 / 255, 255 / 255);
             bossButton[2].interactable = true;
         }
-        if (PlayerPrefs.GetInt("stage") >= 5)
+        if (PlayerPrefs.GetInt("stage") >= 20)
         {
-            imageSpace2[3].sprite = spriteSpace[3];
+            imageSpace2[3].sprite = spriteSpace2[3];
             imageSpace2[3].color = new Color(255 / 255, 255 / 255, 255 / 255, 255 / 255);
             bossButton[3].interactable = true;
         }
-        if (PlayerPrefs.GetInt("stage") >= 5)
+        if (PlayerPrefs.GetInt("stage") >= 25)
         {
-            imageSpace2[4].sprite = spriteSpace[4];
+            imageSpace2[4].sprite = spriteSpace2[4];
             imageSpace2[4].color = new Color(255 / 255, 255 / 255, 255 / 255, 255 / 255);
             bossButton[4].interactable = true;
         }
-        if (PlayerPrefs.GetInt("stage") >= 5)
+        if (PlayerPrefs.GetInt("stage") >= 30)
         {
-            imageSpace2[5].sprite = spriteSpace[5];
+            imageSpace2[5].sprite = spriteSpace2[5];
             imageSpace2[5].color = new Color(255 / 255, 255 / 255, 255 / 255, 255 / 255);
             bossButton[5].interactable = true;
+        }
+        if (PlayerPrefs.GetInt("stage") >= 30)
+        {
+            imageSpace2[6].sprite = spriteSpace2[6];
+            imageSpace2[6].color = new Color(255 / 255, 255 / 255, 255 / 255, 255 / 255);
+            bossButton[6].interactable = true;
         }
     }
 }

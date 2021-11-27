@@ -28,6 +28,8 @@ public class RareVeterans : Unit
 
     public override void Attack()
     {
+        LastBoss lastBoss = monster.GetComponent<LastBoss>();
+        if (lastBoss != null) lastBoss.target = true;
         monster.Hit();
         monster.Hp = damage;
         GameObject sword = Instantiate(lightSword);
@@ -37,7 +39,7 @@ public class RareVeterans : Unit
     }
     private void OnTriggerEnter2D(Collider2D enemy)
     {
-        if (enemy.tag == "Monster")
+        if (enemy.tag == "Monster" )
         {
             enemys.Add(enemy);
             this.monster = (Monster)enemys[0].GetComponent(typeof(Monster));

@@ -909,7 +909,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator stage30()
     {
-        count = 1;
+        count = 2;
 
         yield return new WaitForSeconds(5f);
         monsterController.spawnBoss6();
