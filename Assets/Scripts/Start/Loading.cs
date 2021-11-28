@@ -19,7 +19,7 @@ public class Loading : MonoBehaviour
         if(access == 0)
         {
             access++;
-            Money.money += 100;
+            Money.money = 100;
             PlayerPrefs.SetInt("money", Money.money);
             PlayerPrefs.SetString("Effect", "On");
             PlayerPrefs.SetString("Sound", "On");
