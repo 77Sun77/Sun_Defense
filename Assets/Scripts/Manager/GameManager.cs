@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        material += 0.2f;
+        material += 20f * Time.deltaTime;
     }
 
     IEnumerator stage1()
