@@ -21,6 +21,8 @@ public class Loading : MonoBehaviour
             access++;
             Money.money += 100;
             PlayerPrefs.SetInt("money", Money.money);
+            PlayerPrefs.SetString("Effect", "On");
+            PlayerPrefs.SetString("Sound", "On");
         }
         loadingBar.value = 0;
         isPlay = false;

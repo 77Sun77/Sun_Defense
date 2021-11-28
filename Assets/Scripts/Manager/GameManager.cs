@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     SpawnMonster monsterController;
-    int stage=29;
+    int stage;
     
     public static int count;
     public Text countText;
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     void getStage()
     {
-       // stage = PlayerPrefs.GetInt("stage");
+        stage = PlayerPrefs.GetInt("stage");
         if (stage == 0) stage = 1;
         
     }

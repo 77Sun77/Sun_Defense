@@ -23,7 +23,7 @@ public class LastBossSkill : MonoBehaviour
     {
         if(collision.tag == "Unit")
         {
-            if (collision.GetComponent(typeof(RareVeterans)) != null) damage = 5;
+            if (collision.GetComponent(typeof(RareVeterans)) != null) damage = 2;
             else damage = 100;
             unit = (Unit)collision.GetComponent(typeof(Unit));
             unit.Hit();
@@ -32,7 +32,7 @@ public class LastBossSkill : MonoBehaviour
         if(collision.tag == "Castle")
         {
             castle = (Castle)collision.GetComponent(typeof(Castle));
-            damage = 5;
+            damage = 3;
             castle.Hit();
             castle.hp -= damage;
         }

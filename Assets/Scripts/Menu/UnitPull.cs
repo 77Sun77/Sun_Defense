@@ -11,6 +11,8 @@ public class UnitPull : MonoBehaviour
     List<string> temp = new List<string>();
 
     public GameObject common, rare, legendary;
+
+    public GameObject commonAnim, rareAnim, legendaryAnim;
     private void SetList()
     {
         commonList.Add("거지");
@@ -44,9 +46,15 @@ public class UnitPull : MonoBehaviour
 
         int randomNumber = Random.Range(0, commonList.Count);
         print(commonList[randomNumber]+"등장");
+
+        commonAnim.SetActive(true);
+        commonAnim.GetComponent<PullAnimation>().Common(commonList[randomNumber]);
+
         Inventory.holdCommon.Add(commonList[randomNumber]);
         SaveCommon(randomNumber);
         commonList.RemoveAt(randomNumber);
+        Money.money -= 100;
+        PlayerPrefs.SetInt("money", Money.money);
     }
 
     public void RarePull()
@@ -55,9 +63,15 @@ public class UnitPull : MonoBehaviour
 
         int randomNumber = Random.Range(0, rareList.Count);
         print(rareList[randomNumber] + "등장");
+
+        rareAnim.SetActive(true);
+        rareAnim.GetComponent<PullAnimation>().Rare(rareList[randomNumber]);
+
         Inventory.holdRare.Add(rareList[randomNumber]);
         SaveRare(randomNumber);
         rareList.RemoveAt(randomNumber);
+        Money.money -= 500;
+        PlayerPrefs.SetInt("money", Money.money);
     }
     public void LegendaryPull()
     {
@@ -65,9 +79,15 @@ public class UnitPull : MonoBehaviour
 
         int randomNumber = Random.Range(0, legendaryList.Count);
         print(legendaryList[randomNumber] + "등장");
+
+        legendaryAnim.SetActive(true);
+        legendaryAnim.GetComponent<PullAnimation>().Legendary(legendaryList[randomNumber]);
+
         Inventory.holdLegendary.Add(legendaryList[randomNumber]);
         SaveLegendary(randomNumber);
         legendaryList.RemoveAt(randomNumber);
+        Money.money -= 1000;
+        PlayerPrefs.SetInt("money", Money.money);
     }
 
 
@@ -153,15 +173,15 @@ public class UnitPull : MonoBehaviour
     {
         if (commonList.Count == 0)
         {
-            common.GetComponent<Button>().interactable = false;
+            common.SetActive(false);
         }
         if (rareList.Count == 0)
         {
-            rare.GetComponent<Button>().interactable = false;
+            rare.SetActive(false);
         }
         if (legendaryList.Count == 0)
         {
-            legendary.GetComponent<Button>().interactable = false;
+            legendary.SetActive(false);
         }
 
 
